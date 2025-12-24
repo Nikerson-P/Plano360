@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame com imagem</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene>
+
+      <!-- Assets (carrega a imagem) -->
+      <a-assets>
+        <img id="bg360" src="img/ambiente.jpg">
+      </a-assets>
+
+      <!-- Câmera -->
+      <a-entity position="0 1.6 0">
+        <a-camera></a-camera>
+      </a-entity>
+
+      <!-- Imagem 360 -->
+      <a-sky src="#bg360" rotation="0 -90 0"></a-sky>
+
+      <!-- Objeto de referência -->
+      <a-box 
+        position="0 1 -3"
+        color="#4CC3D9">
+      </a-box>
+
+    </a-scene>
+  </body>
+</html>
