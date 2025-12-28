@@ -12,6 +12,7 @@
         <img id="ambiente" src="ambiente.jpg" crossorigin="anonymous" />
         <img id="ambiente2" src="ambiente2.jpg" crossorigin="anonymous" />
         <img id="ambiente3" src="ambiente3.jpg" crossorigin="anonymous" />
+        <img id="ambiente4" src="ambiente4.jpg" crossorigin="anonymous" />
       </a-assets>
 <a-camera 
   look-controls="reverseMouseDrag: true;touchEnabled: true; magic-windowTrackingEnabled: false; mouseEnabled: true"
@@ -19,34 +20,33 @@
   
   <a-cursor></a-cursor>
 </a-camera>
-    <a-sky id="sky" src="#ambiente3" rotation="0 0 0"></a-sky>
+      
+<a-sky id="sky" src="#ambiente3" rotation="0 0 0"></a-sky>
 
 <a-entity id="cena1" position="0 1.6 0" visible="true">
   <a-box 
-  id="botao"
-    position="-2 0 -3" 
+    id="botao"
+    position="0 0 0" 
     rotation="0 45 0" 
     color="#4CC3D9" 
     depth="0.5" 
     height="1" 
     width="1"
     class="clicavel">
-  
 </a-entity>
       
 
 
 <a-entity id="cena2" position="0 1.6 0" visible="false">
   <a-box 
-  id="botao"
-    position="-2 0 -3" 
+    id="botao"
+    position="0 0 0" 
     rotation="0 45 0" 
     color="#ffffff" 
     depth="0.5" 
     height="1" 
     width="1"
     class="clicavel">
-  
 </a-entity>
   
   
@@ -55,14 +55,18 @@
 document.addEventListener('DOMContentLoaded', () => {
   const botao = document.querySelector('#botao');
   const cena1 = document.querySelector('#cena1');
-  const sky = document.querySelector('#sky');
   const cena2 = document.querySelector('#cena2');
+  const sky = document.querySelector('#sky');
 
   botao.addEventListener('click', () => {
     botao.setAttribute('color', 'red');
     cena1.setAttribute('visible', 'false');
     cena2.setAttribute('visible', 'true');
-    sky.setAttribute('src', '#ambiente2');
+    if(sky.getAttribute('src') === 'ambiente4){
+      sky.setAttribute('src','#ambiente2')
+    }else{
+    sky.setAttribute('src', '#ambiente4');
+    }
     console.log('Botão clicado');
   });
 });
@@ -71,4 +75,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
