@@ -62,11 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
     botao.setAttribute('color', 'red');
     cena1.setAttribute('visible', 'false');
     cena2.setAttribute('visible', 'true');
-    //if(sky.getAttribute('src') === 'ambiente4'){
-    //  sky.setAttribute('src','#ambiente2')
-   // }else{
-   // sky.setAttribute('src', '#ambiente4');
-   // }
+    
+    if(sky.getAttribute('src') === '#ambiente4'){
+      sky.setAttribute('src','#ambiente2')
+    }else{
+      sky.setAttribute('src', '#ambiente4');
+    }
+    
     console.log('Botão clicado');
   });
 });
@@ -75,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
 
 
