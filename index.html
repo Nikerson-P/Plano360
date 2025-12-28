@@ -1,53 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
   <head>
-    <meta charset="utf-8">
-    <title>A-Frame com imagem</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Showroom</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   </head>
-
   <body>
-    <a-scene>
-
-      <!-- Assets (carrega a imagem) -->
+    <a-scene  vr-mode-ui="enabled: false">
       <a-assets>
-
-        <img id="bg360" src="ambiente.jpg">
-	<img id="ambiente2" src="ambiente2.jpg">
-	<img id="ambiente3" src="ambiente3.jpg">
-	<img id="ambiente4" src="ambiente4.jpg">
-
+        <img id="ambiente" src="ambiente.jpg" crossorigin="anonymous" />
+        <img id="ambiente2" src="ambiente2.jpg" crossorigin="anonymous" />
+        <img id="ambiente3" src="ambiente3.jpg" crossorigin="anonymous" />
       </a-assets>
+<a-camera 
+  look-controls="reverseMouseDrag: true;touchEnabled: true; magic-windowTrackingEnabled: false; mouseEnabled: true"
+  raycaster="objects: .clicavel">
+  
+  <a-cursor></a-cursor>
+</a-camera>
+    <a-sky id="sky" src="#ambiente3" rotation="0 -90 0"></a-sky>
 
-      <!-- Câmera -->
-      <a-entity position="0 1.6 0">
-        <a-camera look-controls="reverseMouseDrag: true"></a-camera>
-      </a-entity>
+<a-entity id="cena1" position="0 1.6 0" visible="true">
+  <a-box 
+  id="botao"
+    position="-2 0 -3" 
+    rotation="0 45 0" 
+    color="#4CC3D9" 
+    depth="0.5" 
+    height="1" 
+    width="1"
+    class="clicavel">
+  
+</a-entity>
+      
 
-      <!-- Imagem 360 -->
-      <a-sky src="#bg360" rotation="0 -90 0"></a-sky>
 
-      <!-- Objeto de referência -->
-      <a-box 
-	id="proxima"
-        position="0 1 -3"
-        color="#4CC3D9">
-      </a-box>
-
+<a-entity id="cena2" position="0 1.6 0" visible="false">
+  <a-box 
+  id="botao"
+    position="-2 0 -3" 
+    rotation="0 45 0" 
+    color="#ffffff" 
+    depth="0.5" 
+    height="1" 
+    width="1"
+    class="clicavel">
+  
+</a-entity>
+  
+  
     </a-scene>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const botao = document.querySelector('#botao');
+  const cena1 = document.querySelector('#cena1');
+  const sky = document.querySelector('#sky');
+  const cena2 = document.querySelector('#cena2');
+
+  botao.addEventListener('click', () => {
+    botao.setAttribute('color', 'red');
+    cena1.setAttribute('visible', 'false');
+    cena2.setAttribute('visible', 'true');
+    sky.setAttribute('src', '#ambiente2');
+    console.log('Botão clicado');
+  });
+});
+</script>
 
 
-	<script>
-	 const proxima = document.querySelector('#proxima');
-	 proxima.addEventListener('click',()=>{
-			proxima.setAttribute('color','#ffffff');
-		});
-	
-	
-	</script>
-  </body>
+  </body> 
 </html>
-
-
-
-
