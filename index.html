@@ -28,153 +28,34 @@
       
 <a-sky id="sky" src="#ambiente" rotation="0 -90 0"></a-sky>
 
-//cena inicial
-<a-entity id="cenaInicio" position="0 1.6 0" visible="false">
-    <a-box 
-      id="inicio"
-      position="0 0 -1.6"
-      rotation="0 90 0" 
-      color="#4CC3D9" 
-      depth="0.3" 
-      height="0.3" 
-      width="0.3"
-      class="clicavel inicio">
+<a-sphere 
+ color="red"
+ radius="5"
+ position="0 1.3 0" 
+></a-sphere>
 
-    <a-box 
-      id="inicio_montanhas"
-      position="-1.6 0 -1.6"
-      rotation="0 90 0" 
-      color="#4CC3D9" 
-      depth="0.3" 
-      height="0.3" 
-      width="0.3"
-      class="clicavel montanhas">
-</a-entity>
-      
-
-//cena montanhas 
-<a-entity id="cenaMontanha" position="0 1.6 0" visible="true">
-    <a-box 
-      id="montanhas_inicio"
-      position="0 0 -1.6"
-      rotation="0 90 0" 
-      color="#ffffff" 
-      depth="0.3" 
-      height="0.3" 
-      width="0.3"
-      class="clicavel inicio">
-
-    <a-box 
-      id="montanhas_quarto"
-      position="1.6 0 -1.6"
-      rotation="0 90 0" 
-      color="#ffffff" 
-      depth="0.3" 
-      height="0.3" 
-      width="0.2"
-      class="clicavel quarto">
-</a-entity>
-
-//cena quartos
-<a-entity id="cenaQuartos" position="0 1.6 0" visible="false">
-    <a-box 
-      id="quartos_inicio"
-      position="0 0 -1.6"
-      rotation="0 90 0" 
-      color="#ffffff" 
-      depth="0.3" 
-      height="0.3" 
-      width="0.3"
-      class="clicavel inicio">
-
-    <a-box 
-      id="quartos_montanhas"
-      position="-1.6 0 -1.6"
-      rotation="0 90 0" 
-      color="#ffffff" 
-      depth="0.3" 
-      height="0.3" 
-      width="0.2"
-      class="clicavel montanhas">
-</a-entity>
   
   
     </a-scene>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   //botoes
-  const inicio = document.querySelectorAll('#inicio, #montanhas_inicio, #quartos_inicio ');
-  const montanhas = document.querySelectorAll('#inicio_montanhas, #quartos_montanhas');
-  const quarto = document.querySelectorAll('.quarto');
+
 
   //cenas 
-  const cena1 = document.querySelector('#cenaInicio');
-  const cena3 = document.querySelector('#cenaQuartos');
-  const cena2 = document.querySelector('#cenaMontanha');
 
   //plano de fundo
   const sky = document.querySelector('#sky');
 
-  
-  //cursor
-  //const cursor = document.querySelector('a-cursor');
 
-
-  inicio.forEach(botao =>{
-      botao.addEventListener('click', () => {
-        //visibilidade
-        
-        cena2.setAttribute('visible','false');
-        cena3.setAttribute('visible','false');
-        cena1.setAttribute('visible','true');
-    
-        //ambiente correspondente
-        sky.setAttribute('src','#ambiente3');
-        console.log('Botão clicado inicio', botao.id);
-    
-      })
-  });
-
-  quarto.forEach(botao =>{
-    botao.addEventListener('click', () => {
-      //visibilidade
-      cena1.setAttribute('visible','false');
-      cena2.setAttribute('visible','false');
-      cena3.setAttribute('visible','true');
-  
-      //ambiente correspondente
-      sky.setAttribute('src','#ambiente');
-      console.log('Botão clicado quarto' , botao.id);
-    })
-  });
-  montanhas.forEach( botao =>{
-  botao.addEventListener('click', () => {
-    //visibilidade
-    cena1.setAttribute('visible','false');
-    cena3.setAttribute('visible','false');
-    cena2.setAttribute('visible','true');
-
-    //ambiente correspondente
-    sky.setAttribute('src','#ambiente');
-    console.log('Botão clicado montanhas');
-  })
-});
-  
-
- setTimeout(() => {
-    cursor.components.raycaster.refreshObjects();
-  }, 50);
-
-   setTimeout(() => {
-     let cenaVisivel = document.querySelector('a-entity[visible="true"]');
-     console.log(cenaVisivel);
-  }, 100);
+   
 });
 </script>
 
 
   </body> 
 </html>
+
 
 
 
