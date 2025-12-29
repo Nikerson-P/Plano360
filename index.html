@@ -53,30 +53,28 @@
     </a-scene>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const botao = document.querySelector('#botao');
-  const cena1 = document.querySelector('#cena1');
-  const cena2 = document.querySelector('#cena2');
-  const sky = document.querySelector('#sky');
+ const acao = () => {
+  botao.setAttribute('color', 'red');
+  cena1.setAttribute('visible', 'false');
+  cena2.setAttribute('visible', 'true');
 
-  botao.addEventListener('click', () => {
-    botao.setAttribute('color', 'red');
-    cena1.setAttribute('visible', 'false');
-    cena2.setAttribute('visible', 'true');
-    
-    if(sky.getAttribute('src') === '#ambiente4'){
-      sky.setAttribute('src','#ambiente3')
-    }else{
-      sky.setAttribute('src', '#ambiente4');
-    }
-    
-    console.log('Botão clicado');
-  });
+  if (sky.getAttribute('src') === '#ambiente4') {
+    sky.setAttribute('src', '#ambiente3');
+  } else {
+    sky.setAttribute('src', '#ambiente4');
+  }
+
+  console.log('Botão ativado');
+};
+ botao.addEventListener('click',acao);
+ botao.addEventListener('touchstart',acao);
 });
 </script>
 
 
   </body> 
 </html>
+
 
 
 
