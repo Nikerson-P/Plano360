@@ -1,99 +1,26 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Showroom</title>
+    <meta charset="UTF-8">
+    <title>Teste Panorama Esfera</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   </head>
   <body>
-    <a-scene  vr-mode-ui="enabled: false" >
-           <a-assets>
-                  <img id="ambiente" src="ambiente.jpg" crossorigin="anonymous" />
-                  <img id="ambiente2" src="ambiente2.jpg" crossorigin="anonymous" />
-                  <img id="ambiente3" src="ambiente3.jpg" crossorigin="anonymous" />
-                  <img id="ambiente4" src="ambiente4.jpg" crossorigin="anonymous" />
-                  <img id="showroom1" src="lampadas.jpeg" crossorigin="anonymous" />
-                  <img id="showroom2" src="segundo.jpg" crossorigin="anonymous" />
-           </a-assets>
-          
-            <a-camera look-controls="reverseMouseDrag: true;touchEnabled: true; magic-windowTrackingEnabled: false; mouseEnabled: true"
-            >
-          <a-cursor fuse="false" raycaster="objects: .clicavel" rayOrigin="mouse"></a-cursor>
-          </a-camera>
-  
-               
-      <a-sky src="#showroom2" radius="40"></a-sky>
-          
-</a-scene>
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-  
-
-   
-});
-</script>
-
-
-  </body> 
+    <a-scene>
+      
+      <!-- Assets -->
+      <a-assets>
+        <img id="panorama" src="segundo.jpg">
+      </a-assets>
+      
+      <!-- Esfera customizada -->
+      <a-entity geometry="primitive: sphere; radius: 5000; segmentsWidth: 64; segmentsHeight: 64"
+                material="src: #panorama; side: back; repeat: 1 0.27">
+      </a-entity>
+      
+      <!-- Câmera com look-controls -->
+      <a-camera look-controls="maxPitch: 45; minPitch: -45"></a-camera>
+      
+    </a-scene>
+  </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
