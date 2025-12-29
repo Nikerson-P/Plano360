@@ -14,9 +14,14 @@
       </a-assets>
       
       <!-- Esfera customizada -->
-      <a-entity geometry="primitive: cylinder; radius: 5000; segmentsWidth: 64; segmentsHeight: 64"
-                material="src: #panorama; side: back; repeat: 1 0.27">
-      </a-entity>
+    <a-scene>
+        <!-- Cilindro vertical -->
+          <a-cylinder
+              position="0 1.6 0"
+              radius="5"
+              height="3"
+            material="src: #panorama; side: back">
+        </a-cylinder>
       
       <!-- Câmera com look-controls -->
       <a-camera look-controls="maxPitch: 45; minPitch: -45"></a-camera>
@@ -24,4 +29,5 @@
     </a-scene>
   </body>
 </html>
+
 
