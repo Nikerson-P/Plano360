@@ -38,64 +38,64 @@
       depth="0.3" 
       height="0.3" 
       width="0.3"
-      class="clicavel">
+      class="clicavel inicio">
 
     <a-box 
-      id="montanhas"
+      id="inicio_montanhas"
       position="-1.6 0 -1.6"
       rotation="0 90 0" 
       color="#4CC3D9" 
       depth="0.3" 
       height="0.3" 
       width="0.3"
-      class="clicavel">
+      class="clicavel montanhas">
 </a-entity>
       
 
 //cena montanhas 
 <a-entity id="cenaMontanha" position="0 1.6 0" visible="false">
     <a-box 
-      id="inicio"
+      id="montanhas_inicio"
       position="0 0 -1.6"
       rotation="0 90 0" 
       color="#ffffff" 
       depth="0.3" 
       height="0.3" 
       width="0.3"
-      class="clicavel">
+      class="clicavel inicio">
 
     <a-box 
-      id="quarto"
+      id="montanhas_quarto"
       position="1.6 0 -1.6"
       rotation="0 90 0" 
       color="#ffffff" 
       depth="0.3" 
       height="0.3" 
       width="0.2"
-      class="clicavel">
+      class="clicavel quarto">
 </a-entity>
 
 //cena quartos
 <a-entity id="cenaQuartos" position="0 1.6 0" visible="false">
     <a-box 
-      id="inicio"
+      id="quartos_inicio"
       position="0 0 -1.6"
       rotation="0 90 0" 
       color="#ffffff" 
       depth="0.3" 
       height="0.3" 
       width="0.3"
-      class="clicavel">
+      class="clicavel inicio">
 
     <a-box 
-      id="montanhas"
+      id="quartos_montanhas"
       position="-1.6 0 -1.6"
       rotation="0 90 0" 
       color="#ffffff" 
       depth="0.3" 
       height="0.3" 
       width="0.2"
-      class="clicavel">
+      class="clicavel montanhas">
 </a-entity>
   
   
@@ -103,9 +103,9 @@
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   //botoes
-  const inicio = document.querySelector('#inicio');
-  const montanhas = document.querySelector('#montanhas');
-  const quarto = document.querySelector('#quarto');
+  const inicio = document.querySelector('.inicio');
+  const montanhas = document.querySelector('.montanhas');
+  const quarto = document.querySelector('.quarto');
 
   //cenas 
   const cena1 = document.querySelector('#cenaInicio');
@@ -165,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
 
 
