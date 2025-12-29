@@ -103,9 +103,9 @@
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   //botoes
-  const inicio = document.querySelector('.inicio');
-  const montanhas = document.querySelector('.montanhas');
-  const quarto = document.querySelector('.quarto');
+  const inicio = document.querySelectorAll('.inicio');
+  const montanhas = document.querySelectorAll('.montanhas');
+  const quarto = document.querySelectorAll('.quarto');
 
   //cenas 
   const cena1 = document.querySelector('#cenaInicio');
@@ -119,31 +119,36 @@ document.addEventListener('DOMContentLoaded', () => {
   //cursor
   //const cursor = document.querySelector('a-cursor');
 
-  
-  inicio.addEventListener('click', () => {
-    //visibilidade
+
+  inicio.forEach(botao =>{
+      botao.addEventListener('click', () => {
+        //visibilidade
+        
+        cena2.setAttribute('visible','false');
+        cena3.setAttribute('visible','false');
+        cena1.setAttribute('visible','true');
     
-    cena2.setAttribute('visible','false');
-    cena3.setAttribute('visible','false');
-    cena1.setAttribute('visible','true');
-
-    //ambiente correspondente
-    sky.setAttribute('src','#ambiente3');
-    console.log('Botão clicado inicio');
+        //ambiente correspondente
+        sky.setAttribute('src','#ambiente3');
+        console.log('Botão clicado inicio', botao.id);
+    
+      })
   });
+
+  quarto.forEach(botao =>{
+    botao.addEventListener('click', () => {
+      //visibilidade
+      cena1.setAttribute('visible','false');
+      cena2.setAttribute('visible','false');
+      cena3.setAttribute('visible','true');
   
-  quarto.addEventListener('click', () => {
-    //visibilidade
-    cena1.setAttribute('visible','false');
-    cena2.setAttribute('visible','false');
-    cena3.setAttribute('visible','true');
-
-    //ambiente correspondente
-    sky.setAttribute('src','#ambiente');
-    console.log('Botão clicado quarto');
+      //ambiente correspondente
+      sky.setAttribute('src','#ambiente');
+      console.log('Botão clicado quarto' , botao.id);
+    })
   });
-
-  montanhas.addEventListener('click', () => {
+  montanhas.forEach( botao =>{
+  botao.addEventListener('click', () => {
     //visibilidade
     cena1.setAttribute('visible','false');
     cena3.setAttribute('visible','false');
@@ -152,7 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
     //ambiente correspondente
     sky.setAttribute('src','#ambiente');
     console.log('Botão clicado montanhas');
-  });
+  })
+});
   
 
  /* setTimeout(() => {
@@ -169,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
 
 
