@@ -24,7 +24,7 @@
 <a-sky id="sky" src="#ambiente3" rotation="0 -90 0"></a-sky>
 
 //cena inicial
-<a-entity id="inicio" position="0 1.6 0" visible="true">
+<a-entity id="cenaInicio" position="0 1.6 0" visible="true">
     <a-box 
       id="inicio"
       position="0 0 -1.6"
@@ -48,7 +48,7 @@
       
 
 //cena montanhas 
-<a-entity id="montanhas" position="0 1.6 0" visible="false">
+<a-entity id="cenaMontanha" position="0 1.6 0" visible="false">
     <a-box 
       id="inicio"
       position="0 0 -1.6"
@@ -71,7 +71,7 @@
 </a-entity>
 
 //cena quartos
-<a-entity id="quarto" position="0 1.6 0" visible="false">
+<a-entity id="cenaQuartos" position="0 1.6 0" visible="false">
     <a-box 
       id="inicio"
       position="0 0 -1.6"
@@ -103,8 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const quarto = document.querySelector('#quarto');
 
   //cenas 
-  const cena1 = document.querySelector('#cena1');
-  const cena2 = document.querySelector('#cena2');
+  const cena1 = document.querySelector('#cenaInicio');
+  const cena3 = document.querySelector('#cenaQuartos');
+  const cena2 = document.querySelector('#cenaMontanha');
 
   //plano de fundo
   const sky = document.querySelector('#sky');
@@ -114,17 +115,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   
   inicio.addEventListener('click', () => {
-    inicio.setAttribute('visible','true');
-    montanhas.setAttribute('visible','false');
-    quarto.setAttribute('visible','false');
+    //visibilidade
+    cena1.setAttribute('visible','true');
+    cena2.setAttribute('visible','false');
+    cena3.setAttribute('visible','false');
+
+    //ambiente correspondente
     sky.setAttribute('src','#ambiente3');
     console.log('Botão clicado');
   });
   
   quarto.addEventListener('click', () => {
-    inicio.setAttribute('visible','false');
-    montanhas.setAttribute('visible','false');
-    quarto.setAttribute('visible','true');
+    //visibilidade
+    cena1.setAttribute('visible','false');
+    cena2.setAttribute('visible','false');
+    cena3.setAttribute('visible','true');
+
+    //ambiente correspondente
+    sky.setAttribute('src','#ambiente');
+    console.log('Botão clicado');
+  });
+
+  montanhas.addEventListener('click', () => {
+    //visibilidade
+    cena1.setAttribute('visible','false');
+    cena2.setAttribute('visible','true');
+    cena3.setAttribute('visible','false');
+
+    //ambiente correspondente
     sky.setAttribute('src','#ambiente');
     console.log('Botão clicado');
   });
@@ -141,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
 
 
