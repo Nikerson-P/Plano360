@@ -19,8 +19,14 @@
           <a-cursor fuse="false" raycaster="objects: .clicavel" rayOrigin="mouse"></a-cursor>
           </a-camera>
                 
-          <a-sky id="sky" src="#showroom1" rotation="0 -90 0"></a-sky>
-          
+          <a-cylinder
+            src="#showroom1"
+            radius="6"
+            height="2"
+            open-ended="true"
+            theta-length="360"
+            rotation="0 180 0"
+          ></a-cylinder>
           
             
   
@@ -36,6 +42,7 @@
 
   </body> 
 </html>
+
 
 
 
