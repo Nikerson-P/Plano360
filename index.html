@@ -115,6 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
   //plano de fundo
   const sky = document.querySelector('#sky');
 
+  //pega cena visivel 
+  var cenaVisivel;
+  console.log(cenaVisivel);
   //cursor
   //const cursor = document.querySelector('a-cursor');
 
@@ -158,13 +161,16 @@ document.addEventListener('DOMContentLoaded', () => {
     cursor.components.raycaster.refreshObjects();
   }, 50);
 */
-  
+   setTimeout(() => {
+     cenaVisivel = document.querySelector('a-entity[visible="true"]');
+  }, 50);
 });
 </script>
 
 
   </body> 
 </html>
+
 
 
 
