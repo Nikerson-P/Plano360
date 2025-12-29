@@ -116,18 +116,19 @@ document.addEventListener('DOMContentLoaded', () => {
   const sky = document.querySelector('#sky');
 
   //cursor
-  const cursor = document.querySelector('a-cursor');
+  //const cursor = document.querySelector('a-cursor');
 
   
   inicio.addEventListener('click', () => {
     //visibilidade
-    cena1.setAttribute('visible','true');
+    
     cena2.setAttribute('visible','false');
     cena3.setAttribute('visible','false');
+    cena1.setAttribute('visible','true');
 
     //ambiente correspondente
     sky.setAttribute('src','#ambiente3');
-    console.log('Botão clicado');
+    console.log('Botão clicado inicio');
   });
   
   quarto.addEventListener('click', () => {
@@ -138,25 +139,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //ambiente correspondente
     sky.setAttribute('src','#ambiente');
-    console.log('Botão clicado');
+    console.log('Botão clicado quarto');
   });
 
   montanhas.addEventListener('click', () => {
     //visibilidade
     cena1.setAttribute('visible','false');
-    cena2.setAttribute('visible','true');
     cena3.setAttribute('visible','false');
+    cena2.setAttribute('visible','true');
 
     //ambiente correspondente
     sky.setAttribute('src','#ambiente');
-    console.log('Botão clicado');
+    console.log('Botão clicado montanhas');
   });
   
 
-  setTimeout(() => {
+ /* setTimeout(() => {
     cursor.components.raycaster.refreshObjects();
   }, 50);
-
+*/
   
 });
 </script>
@@ -164,6 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
 
 
