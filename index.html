@@ -26,10 +26,10 @@
 
 </a-camera>
       
-<a-sky id="sky" src="#ambiente3" rotation="0 -90 0"></a-sky>
+<a-sky id="sky" src="#ambiente" rotation="0 -90 0"></a-sky>
 
 //cena inicial
-<a-entity id="cenaInicio" position="0 1.6 0" visible="true">
+<a-entity id="cenaInicio" position="0 1.6 0" visible="false">
     <a-box 
       id="inicio"
       position="0 0 -1.6"
@@ -53,7 +53,7 @@
       
 
 //cena montanhas 
-<a-entity id="cenaMontanha" position="0 1.6 0" visible="false">
+<a-entity id="cenaMontanha" position="0 1.6 0" visible="true">
     <a-box 
       id="montanhas_inicio"
       position="0 0 -1.6"
@@ -103,7 +103,7 @@
     <script>
 document.addEventListener('DOMContentLoaded', () => {
   //botoes
-  const inicio = document.querySelectorAll('.inicio');
+  const inicio = document.querySelectorAll('#inicio, montanhas_inicio, quartos_inicio ');
   const montanhas = document.querySelectorAll('.montanhas');
   const quarto = document.querySelectorAll('.quarto');
 
@@ -175,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   </body> 
 </html>
+
 
 
 
