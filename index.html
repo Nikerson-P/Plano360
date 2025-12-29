@@ -24,62 +24,73 @@
 <a-sky id="sky" src="#ambiente3" rotation="0 -90 0"></a-sky>
 
 <a-entity id="cena1" position="0 1.6 0" visible="true">
-  <a-box 
-    id="botao"
-    position="0 0 -1.6"
-    rotation="0 90 0" 
-    color="#4CC3D9" 
-    depth="0.5" 
-    height="0.5" 
-    width="0.5"
-    class="clicavel">
+    <a-box 
+      id="inicio"
+      position="0 0 -1.6"
+      rotation="0 90 0" 
+      color="#4CC3D9" 
+      depth="0.3" 
+      height="0.3" 
+      width="0.3"
+      class="clicavel">
 
     <a-box 
-    id="botao"
-    position="-1.6 0 -1.6"
-    rotation="0 90 0" 
-    color="#4CC3D9" 
-    depth="0.5" 
-    height="0.5" 
-    width="0.5"
-    class="clicavel">
+      id="montanhas"
+      position="-1.6 0 -1.6"
+      rotation="0 90 0" 
+      color="#4CC3D9" 
+      depth="0.3" 
+      height="0.3" 
+      width="0.3"
+      class="clicavel">
 </a-entity>
       
 
 
 <a-entity id="cena2" position="0 1.6 0" visible="false">
-  <a-box 
-    id="botao"
-    position="0 0 -1.6"
-    rotation="0 90 0" 
-    color="#ffffff" 
-    depth="0.5" 
-    height="0.5" 
-    width="0.5"
-    class="clicavel">
+    <a-box 
+      id="inicio"
+      position="0 0 -1.6"
+      rotation="0 90 0" 
+      color="#ffffff" 
+      depth="0.3" 
+      height="0.3" 
+      width="0.3"
+      class="clicavel">
 
     <a-box 
-    id="botao"
-    position="-1.6 0 -1.6"
-    rotation="0 90 0" 
-    color="#ffffff" 
-    depth="0.5" 
-    height="0.5" 
-    width="0.5"
-    class="clicavel">
+      id="quarto"
+      position="1.6 0 -1.6"
+      rotation="0 90 0" 
+      color="#ffffff" 
+      depth="0.3" 
+      height="0.3" 
+      width="0.2"
+      class="clicavel">
 </a-entity>
   
   
     </a-scene>
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const botao = document.querySelector('#botao');
+  //botoes
+  const inicio = document.querySelector('#inico');
+  const montanhas = document.querySelector('#montanhas');
+  const quarto = document.querySelector('#quarto');
+
+  //cenas 
   const cena1 = document.querySelector('#cena1');
   const cena2 = document.querySelector('#cena2');
+
+  //plano de fundo
   const sky = document.querySelector('#sky');
 
-  botao.addEventListener('click', () => {
-    botao.setAttribute('color', 'red');
+  //cursor
+  const cursor = document.querySelector('a-cursor');
+
+  
+  inicio.addEventListener('click', () => {
+    
     cena1.setAttribute('visible', 'false');
     cena2.setAttribute('visible', 'true');
     
@@ -88,16 +99,25 @@ document.addEventListener('DOMContentLoaded', () => {
     }else{
       sky.setAttribute('src', '#ambiente4');
     }
-    
-    
     console.log('Botão clicado');
   });
+  quarto.addEventListener('click', () => {
+    
+    cena1.setAttribute('visible', 'false');
+    cena2.setAttribute('visible', 'true');
+    
+    if(sky.getAttribute('src') === '#ambiente4'){
+      sky.setAttribute('src','#ambiente3')
+    }else{
+      sky.setAttribute('src', '#ambiente4');
+    }
+    console.log('Botão clicado');
+  });
+  
 
-  const cursor = document.querySelector('a-cursor');
-
-setTimeout(() => {
-  cursor.components.raycaster.refreshObjects();
-}, 50);
+  setTimeout(() => {
+    cursor.components.raycaster.refreshObjects();
+  }, 50);
 
   
 });
@@ -106,6 +126,7 @@ setTimeout(() => {
 
   </body> 
 </html>
+
 
 
 
