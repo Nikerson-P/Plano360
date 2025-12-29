@@ -16,16 +16,6 @@
                   <img id="showroom1" src="lampadas.jpeg" crossorigin="anonymous" />
            </a-assets>
           
-                
-          <a-cylinder
-            src="#showroom1"
-            radius="6"
-            height="2"
-            open-ended="true"
-            theta-length="360"
-            rotation="0 180 0"
-          ></a-cylinder>
-          
             <a-camera look-controls="reverseMouseDrag: true;touchEnabled: true; magic-windowTrackingEnabled: false; mouseEnabled: true"
             position="0 1.6 0"
         fov="70"
@@ -36,6 +26,9 @@
           <a-cursor fuse="false" raycaster="objects: .clicavel" rayOrigin="mouse"></a-cursor>
           </a-camera>
   
+                
+          <a-sky src="#showroom1"></a-sky>
+          
 </a-scene>
 <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -48,6 +41,7 @@
 
   </body> 
 </html>
+
 
 
 
