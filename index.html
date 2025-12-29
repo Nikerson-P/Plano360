@@ -27,8 +27,9 @@
           <a-cursor fuse="false" raycaster="objects: .clicavel" rayOrigin="mouse"></a-cursor>
           </a-camera>
   
-                
-          <a-sky src="#showroom2" rotation="0 -90 0" scale="1 2 1"></a-sky>
+                <a-entity geometry="primitive: sphere; radius: 5000; segmentsWidth: 64; segmentsHeight: 64"
+            material="src: #showroom2; side: back; repeat: 1 0.15">
+                    </a-entity>
           
 </a-scene>
 <script>
@@ -42,6 +43,7 @@
 
   </body> 
 </html>
+
 
 
 
