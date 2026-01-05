@@ -46,9 +46,10 @@
     </a-scene>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
+			 const sky = document.querySelector("#ambiente");
             document.addEventListener('click', () => {
 			const camera = document.querySelector('a-scene').camera;
-
+			
 		  	const raycaster = new THREE.Raycaster();
 		  	raycaster.setFromCamera({ x: 0, y: 0 }, camera);
 		
@@ -61,9 +62,18 @@
 		    	const el = hit[0].object.el;
 		    	console.log('Clicou no id:', el.id);
 		
-			   	// const destino = el.getAttribute('data-destino');
-			    //document.querySelector('#sky').setAttribute('src', destino);
-  			}
+			   switch(el.id){
+				   case 'btnBalizadores':
+					   console.log("balizadores");
+					   break;
+				   case 'btnRefletores':
+					   console.log("refletores");
+					   break;
+				   default:
+					   console.log("nenhum ");
+					   
+  				}
+			}
 });
 
          
@@ -72,6 +82,7 @@
     
   </body>
 </html>
+
 
 
 
