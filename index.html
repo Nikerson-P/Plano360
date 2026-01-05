@@ -25,17 +25,16 @@
         <a-camera cursor="rayOrigin: mouse" raycaster="objects: .hotspot" position="0 1.6 0" look-controls="reverseMouseDrag: true"></a-camera>
      
 
-      <!-- Cubos distribuídos a cada 15° -->
-      <a-image src="#clique"  position="2 2.6 0"  width="0.6" height="0.6 " rotation="0 105.1 0" transparent="true"></a-image>
+      
       
       <a-entity >
         <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 90 0"></a-sky>
       </a-entity>
       
-            <a-image position="2 1.6 0" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-            <a-image position=" 1.414 1.6 -1.414" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
-            <a-image position="1.0 1.6 -1.732" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-            <a-image position="0.518 1.6 -1.933" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+            <a-image visible="false" position="2 1.6 0" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
+            <a-image position=" -1.414 1.6 1.414" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+            <a-image position="0.518 1.6 1.933" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
+            <a-image position="-0.518 1.6 -1.933" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
 			<!-- <a-image position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
             <a-image position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
             <a-image position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
@@ -73,6 +72,7 @@
     
   </body>
 </html>
+
 
 
 
