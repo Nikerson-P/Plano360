@@ -2,13 +2,21 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Círculo de Cubos</title>
+    <title>GalaxyLed - Showroom</title>
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   </head>
   <body>
     <a-scene>
       <a-assets>
         <img id="clique" src="clique.png" />
+        <img id="refletores" src="Refletores-spot.jpg" />
+        <img id="arandela1" src="arandela-decor.jpg" />
+        <img id="arandela2" src="arandela-decor2.jpg" />
+        <img id="awei-mesa" src="awei-mesa.jpg" />
+        <img id="fitas" src="fitas.jpg" />
+        <img id="balizadores" src="balizadores.jpg" />
+        <img id="centro_showroom" src="centro_showroom.jpg" />
+        <img id="pendentes" src="pendentes.jpg" />
       </a-assets>
       <!-- Câmera no centro -->
       <a-entity position="0 1.6 0">
@@ -18,40 +26,40 @@
       <!-- Cubos distribuídos a cada 15° -->
       <a-image src="#clique"  position="2 2.6 0"  width="0.6" height="0.6 " rotation="0 105.1 0" transparent="true"></a-image>
       
-      <a-box position="2 2.6 0" color="red" depth="0.5" height="0.3" width="0.3"></a-box>
-      <a-box position="1.933 2.6 0.518" color="orange" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.732 2.6 1.000" color="yellow" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.414 2.6 1.414" color="green" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.000 2.6 1.732" color="blue" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="0.518 2.6 1.933" color="indigo" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="0 2.6 2" color="violet" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-0.518 2.6 1.933" color="pink" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.000 2.6 1.732" color="cyan" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.414 2.6 1.414" color="lime" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.732 2.6 1.000" color="magenta" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.933 2.6 0.518" color="brown" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-2 2.6 0" color="gray" depth="0.3" height="0.1" width="0.3"></a-box>
-      <a-box position="-1.933 2.6 -0.518" color="red" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.732 2.6 -1.000" color="orange" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.414 2.6 -1.414" color="yellow" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-1.000 2.6 -1.732" color="green" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="-0.518 2.6 -1.933" color="blue" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="0 2.6 -2" color="indigo" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="0.518 2.6 -1.933" color="violet" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.000 2.6 -1.732" color="pink" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.414 2.6 -1.414" color="cyan" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.732 2.6 -1.000" color="lime" depth="0.1" height="0.3" width="0.3"></a-box>
-      <a-box position="1.933 2.6 -0.518" color="magenta" depth="0.1" height="0.3" width="0.3"></a-box>
-
-      <!-- Chão para referência -->
-      <a-sky src="Refletores-spot.jpg"></a-sky>
-      <!-- Luz -->
-      <a-light type="ambient" color="#FFF"></a-light>
-      <a-light type="directional" position="1 3 2"></a-light>
-
+      <a-entity >
+        <a-sky id="ambiente" src="Refletores-spot.jpg"></a-sky>
+      </a-entity>
+      
+            <a-image id="btnCentroShowroom" src="#clique"></a-image>
+            <a-image id="btnBalizadores" src="#clique"></a-image>
+            <a-image id="btnRefletores" src="#clique"></a-image>
+            <a-image id="btnMesas" src="#clique"></a-image>
+            <a-image id="btnFitas" src="#clique"></a-image>
+            <a-image id="btnPendentes" src="#clique"></a-image>
+            <a-image id="btnArandelaDecor1" src="#clique"></a-image>
+            <a-image id="btnArandelaDecor2" src="#clique"></a-image>
+            
+    
+      
     </a-scene>
+    <script>
+    	 document.addEventListener('DOMContentLoaded', () => {
+            const btnCentroShowroom =document.getSelector("#btnCentroShowroom");
+            const btnBalizadores =document.getSelector("#btnBalizadores");
+            const btnRefletores =document.getSelector("#btnRefletores");
+            const btnMesas =document.getSelector("#btnMesas");
+            const btnFitas =document.getSelector("#btnFitas");
+            const btnFitas =document.getSelector("#btnPendentes");
+            const btnPendentes =document.getSelector("#btnPendentes");
+            const btnArandelaDecor1 =document.getSelector("#btnArandelaDecor1");
+            const btnArandelaDecor2 =document.getSelector("#btnArandelaDecor2");
+         
+       })
+	</script>
+    
   </body>
 </html>
+
 
 
 
