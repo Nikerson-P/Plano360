@@ -32,36 +32,48 @@
         <a-sky id="ambiente" src="Refletores-spot.jpg"></a-sky>
       </a-entity>
       
-            <a-image id="btnCentroShowroom" src="#clique"></a-image>
-            <a-image id="btnBalizadores" src="#clique"></a-image>
-            <a-image id="btnRefletores" src="#clique"></a-image>
-            <a-image id="btnMesas" src="#clique"></a-image>
-			<a-image id="btnMesaAwei" src="#clique"></a-image>
-            <a-image id="btnFitas" src="#clique"></a-image>
-            <a-image id="btnPendentes" src="#clique"></a-image>
-            <a-image id="btnArandelaDecor1" src="#clique"></a-image>
-            <a-image id="btnArandelaDecor2" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
+            <a-image position="" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+			<a-image position="" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
+            <a-image position="" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
             
     
       
     </a-scene>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-            const btnCentroShowroom =document.getSelector("#btnCentroShowroom");
-            const btnBalizadores =document.getSelector("#btnBalizadores");
-            const btnRefletores =document.getSelector("#btnRefletores");
-            const btnMesas =document.getSelector("#btnMesas");
-            const btnFitas =document.getSelector("#btnFitas");
-            const btnFitas =document.getSelector("#btnPendentes");
-            const btnPendentes =document.getSelector("#btnPendentes");
-            const btnArandelaDecor1 =document.getSelector("#btnArandelaDecor1");
-            const btnArandelaDecor2 =document.getSelector("#btnArandelaDecor2");
+            document.addEventListener('click', () => {
+		  	const camera = document.querySelector('[camera]').object3D;
+		
+		  	const raycaster = new THREE.Raycaster();
+		  	raycaster.setFromCamera({ x: 0, y: 0 }, camera);
+		
+		  	const botoes = document.querySelectorAll('.hotspot');
+		 	const objetos = [...botoes].map(b => b.object3D);
+		
+		 	const hit = raycaster.intersectObjects(objetos, true);
+		
+		  	if (hit.length) {
+		    	const el = hit[0].object.el;
+		    	console.log('Clicou no id:', el.id);
+		
+			   	// const destino = el.getAttribute('data-destino');
+			    //document.querySelector('#sky').setAttribute('src', destino);
+  			}
+});
+
          
        })
 	</script>
     
   </body>
 </html>
+
 
 
 
