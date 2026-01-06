@@ -76,11 +76,21 @@
       <input type="number" name="rotZ" id="roz"/><br>
     </br>
     <input type="button" id="btnConfirma" value="Atualiza"/>
-     
-    
-
-
-
+    </br></br></br>
+    <label>Selecionar o fundo:</label>
+    <select id="SelecionarFundo">
+      <option value="">Selecionar</option>
+      <option value="refletores">Refletores</option>
+      <option value="arandela1">ArandelaDecor1</option>
+      <option value="arandela2">ArandelaDecor2</option>
+      <option value="awei-mesa">Awei-mesa</option>
+      <option value="fitas">Fitas</option>
+      <option value="balizadores">Balizadores</option>
+      <option value="pendentes">Pendentes</option>
+      <option value="centro_showroom">Centro Showroom</option>
+      <option value="mesas">Mesas</option>
+    </select>
+    <input type="button" id="btnSelecionar" value="Confirmar Fundo"/>
     </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
@@ -146,6 +156,12 @@
                   });
              });
 
+             botaoSelecionar = document.querySelector('#btnSelecionar');
+             botaoSelecionar.addEventListener('click',()=>{
+              const fundo = document.querySelector('#ambiente');
+              const valor = doucment.querySelector('#SelecionarFundo').value;
+              fundo.setAttribute('src','#'+ valor);
+             })
             
           
              
