@@ -49,13 +49,15 @@
     <div id="controle_mundo" style="float: left;">
 
       <label>Controle de rotação</label></div><br>
-      <label>ArandelaDecor1</label>   <input type="radio" checked name="opcao" value="ArandelaDecor1"/><br>
-      <label>ArandelaDecor2</label>   <input type="radio" name="opcao" value="ArandelaDecor2"/><br>
-      <label>Balizadores</label>      <input type="radio" name="opcao" value="Balizadores"/><br>
-      <label>Centro Showroom</label>  <input type="radio" name="opcao" value="Centro_showroom"/><br>
-      <label>Fitas</label>            <input type="radio" name="opcao" value="Fitas"/><br>
-      <label>Mesa Awei</label>        <input type="radio" name="opcao" value="Mesa"/><br>
-      <label>Mesas</label>            <input type="radio" name="opcao" value="MesaAwei"/><br>
+      <label>ArandelaDecor1</label>   <input type="radio" checked name="opcao" value="btnArandelaDecor1"/><br>
+      <label>ArandelaDecor2</label>   <input type="radio" name="opcao" value="btnArandelaDecor2"/><br>
+      <label>Balizadores</label>      <input type="radio" name="opcao" value="btnBalizadores"/><br>
+      <label>Centro Showroom</label>  <input type="radio" name="opcao" value="btnCentroShowroom"/><br>
+      <label>Fitas</label>            <input type="radio" name="opcao" value="btnFitas"/><br>
+      <label>Mesa Awei</label>        <input type="radio" name="opcao" value="btnMesas"/><br>
+      <label>Mesas</label>            <input type="radio" name="opcao" value="btnMesaAwei"/><br>
+      <label>Pendentes</label>            <input type="radio" name="opcao" value="btnPendentes"/><br>
+      <label>Refletores</label>            <input type="radio" name="opcao" value="btnRefletores"/><br>
     </br>
       <label>Controle de posições</label><br>
       <label>Pos X</label>
@@ -85,6 +87,12 @@
             document.querySelectorAll('input[name="opcao"]').forEach(radio => {
               radio.addEventListener('change', () => {
               console.log(radio.value, radio.checked);
+
+                const valor = radio.value.trim();
+                const elemento = document.querySelector(valor);
+                console.log(elemento);
+
+
               });
             });
 
