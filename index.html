@@ -82,8 +82,11 @@
     </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-            const valor = document.querySelector('input[name="opcao"]:checked');
-            console.log(valor.value);
+            document.querySelectorAll('input[name="opcao"]').forEach(radio => {
+              radio.addEventListener('change', () => {
+              console.log(radio.value, radio.checked);
+              });
+            });
 
 
 			 /*const sky = document.querySelector("#ambiente");
