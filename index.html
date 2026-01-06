@@ -84,12 +84,12 @@
     </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-        let obj;
+            let obj;
             document.querySelectorAll('input[name="opcao"]').forEach(radio => {
               radio.addEventListener('change', () => {
-                console.log(radio.value, radio.checked);
+                console.log(radio.id, radio.checked);
 
-                const elemento = document.querySelector("#"+radio.value);
+                const elemento = document.querySelector("#"+radio.id);
                 obj = elemento;
                 //console.log(elemento.getAttribute('visible'));
                 //console.log(elemento.getAttributeNames());
@@ -107,16 +107,16 @@
 
             botao = document.querySelector('#btnConfirma');
             botao.addEventListener('click',()=>{
-              let posx = document.querySelector("#pox");
-              let posy = document.querySelector("#poy");
-              let posz = document.querySelector("#poz");
+              let posx = document.querySelector("#pox").value;
+              let posy = document.querySelector("#poy").value;
+              let posz = document.querySelector("#poz").value;
 
-              let rotx = document.querySelector("#pox");
-              let roty = document.querySelector("#poy");
-              let rotz = document.querySelector("#poz");
+              let rotx = document.querySelector("#pox").value;
+              let roty = document.querySelector("#poy").value;
+              let rotz = document.querySelector("#poz").value;
               
-              let novaposicao = posx + " " + posy + " " + posz;
-              let novarotacao = rotx + " " + roty + " " + rotz;
+              let novaposicao = `${posx} ${posy}  ${posz}`;
+              let novarotacao = `${rotx} ${roty}  ${rotz}`;
               obj.setAttribute('position', novaposicao);
               obj.setAttribute('rotation', novarotacao);
 
