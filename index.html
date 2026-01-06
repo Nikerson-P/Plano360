@@ -131,13 +131,23 @@
               let roty = document.querySelector("#roy").value;
               let rotz = document.querySelector("#roz").value;
               
-              let novaposicao = `${posx} ${posy}  ${posz}`;
-              let novarotacao = `${rotx} ${roty}  ${rotz}`;
-              obj.setAttribute('position', novaposicao);
-              obj.setAttribute('rotation', novarotacao);
+              
+                  
+                  obj.setAttribute('position', {
+                    x: Number(pox.value),
+                    y: Number(poy.value),
+                    z: Number(poz.value)
+                  });
 
-            }
-          )
+                  obj.setAttribute('rotation', {
+                    x: Number(rox.value),
+                    y: Number(roy.value),
+                    z: Number(roz.value)
+                  });
+             });
+
+            
+          
              
 
 			 /*const sky = document.querySelector("#ambiente");
