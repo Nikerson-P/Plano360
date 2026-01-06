@@ -93,9 +93,11 @@
                 console.log(elemento.getAttributeNames());
 
                 if(elemento.getAttribute('visible') == false){
-                  elemento.setAttribute('visible','true');
+                  elemento.setAttribute('visible',true);
+                  console.log("ligado");
                 }else{
-                  elemento.setAttribute('visible','false');  
+                  elemento.setAttribute('visible',false);  
+                  console.log("desligado");
                 }
 
 
