@@ -33,15 +33,15 @@
         <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 0 0"></a-sky>
       </a-entity>
       
-            <a-image visible="false" position="2 1.6 0" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-            <a-image visible="false" position=" 0 1.6 -2" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
-            <a-image visible="false" position="0.518 1.6 1.933" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-            <a-image visible="false" position="-0.518 1.6 -1.933" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
-			      <a-image visible="false" position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
-            <a-image visible="false" position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
-            <a-image visible="false" position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
-            <a-image visible="false" position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
-            <a-image visible="false" position="" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position="2 1.6 0"               class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
+            <a-image visible="false" rotation="" position=" 0 1.6 -2"             class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position="0.518 1.6 1.933"       class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position="-0.518 1.6 -1.933"     class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+			      <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
                 
 
     </a-scene>
@@ -96,10 +96,25 @@
 
                 if(elemento.getAttribute('visible') == false){
                   elemento.setAttribute('visible',true);
-                  console.log(elemento.value + "ligado");
+                  console.log(elemento.id + "ligado");
+
+                  let posicaoAntiga = elemento.getAttribute('position');
+                  let posx = document.querySelector("#pox");
+                  let posy = document.querySelector("#poy");
+                  let posz = document.querySelector("#poz");
+
+                  posx.value = posicaoAntiga.x;
+                  posy.value = posicaoAntiga.y;
+                  posz.value = posicaoAntiga.z;
+
+                  let rotacaoAntiga = elemento.getAttribute('rotation');
+                  let rotx = document.querySelector("#rox");
+                  let roty = document.querySelector("#roy");
+                  let rotz = document.querySelector("#roz");
+
                 }else{
                   elemento.setAttribute('visible',false);  
-                  console.log(elemento.value + "desligado");
+                  console.log(elemento.id + "desligado");
                 }
 
               });
@@ -112,9 +127,9 @@
               let posy = document.querySelector("#poy").value;
               let posz = document.querySelector("#poz").value;
 
-              let rotx = document.querySelector("#pox").value;
-              let roty = document.querySelector("#poy").value;
-              let rotz = document.querySelector("#poz").value;
+              let rotx = document.querySelector("#rox").value;
+              let roty = document.querySelector("#roy").value;
+              let rotz = document.querySelector("#roz").value;
               
               let novaposicao = `${posx} ${posy}  ${posz}`;
               let novarotacao = `${rotx} ${roty}  ${rotz}`;
