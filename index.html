@@ -91,7 +91,7 @@
             document.querySelectorAll('input[name="opcao"]').forEach(radio => {
               radio.addEventListener('change', () => {
                 console.log(radio.value, radio.checked);
-
+                
                 const elemento = document.querySelector("#"+radio.value);
                 obj = elemento;
                 //console.log(elemento.getAttribute('visible'));
@@ -99,8 +99,8 @@
 
                 if(elemento.getAttribute('visible') == false){
                   elemento.setAttribute('visible',true);
+                  radio.setAttribute('background-color','blue');
                   console.log(elemento.id + "ligado");
-                  elemento.setAttribute('background-color',"blue");
                   let posicaoAntiga = elemento.getAttribute('position');
                   let posx = document.querySelector("#pox");
                   let posy = document.querySelector("#poy");
@@ -117,8 +117,8 @@
 
                 }else{
                   elemento.setAttribute('visible',false);  
+                  radio.setAttribute('background-color','red');
                   console.log(elemento.id + "desligado");
-                  elemento.setAttribute('background-color',"red");
                 }
 
               });
