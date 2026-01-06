@@ -49,15 +49,15 @@
     <div id="controle_mundo" style="float: left;">
 
       <label>Controle de rotação</label></div><br>
-      <label>ArandelaDecor1</label>   <input type="radio" checked name="opcao" value="btnArandelaDecor1"/><br>
-      <label>ArandelaDecor2</label>   <input type="radio" name="opcao" value="btnArandelaDecor2"/><br>
-      <label>Balizadores</label>      <input type="radio" name="opcao" value="btnBalizadores"/><br>
-      <label>Centro Showroom</label>  <input type="radio" name="opcao" value="btnCentroShowroom"/><br>
-      <label>Fitas</label>            <input type="radio" name="opcao" value="btnFitas"/><br>
-      <label>Mesa Awei</label>        <input type="radio" name="opcao" value="btnMesas"/><br>
-      <label>Mesas</label>            <input type="radio" name="opcao" value="btnMesaAwei"/><br>
+      <label>ArandelaDecor1</label>       <input type="radio" name="opcao" value="btnArandelaDecor1"/><br>
+      <label>ArandelaDecor2</label>       <input type="radio" name="opcao" value="btnArandelaDecor2"/><br>
+      <label>Balizadores</label>          <input type="radio" name="opcao" value="btnBalizadores"/><br>
+      <label>Centro Showroom</label>      <input type="radio" name="opcao" value="btnCentroShowroom"/><br>
+      <label>Fitas</label>                <input type="radio" name="opcao" value="btnFitas"/><br>
+      <label>Mesa Awei</label>            <input type="radio" name="opcao" value="btnMesas"/><br>
+      <label>Mesas</label>                <input type="radio" name="opcao" value="btnMesaAwei"/><br>
       <label>Pendentes</label>            <input type="radio" name="opcao" value="btnPendentes"/><br>
-      <label>Refletores</label>            <input type="radio" name="opcao" value="btnRefletores"/><br>
+      <label>Refletores</label>           <input type="radio" name="opcao" value="btnRefletores"/><br>
     </br>
       <label>Controle de posições</label><br>
       <label>Pos X</label>
@@ -84,26 +84,45 @@
     </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
+        let obj;
             document.querySelectorAll('input[name="opcao"]').forEach(radio => {
               radio.addEventListener('change', () => {
                 console.log(radio.value, radio.checked);
 
                 const elemento = document.querySelector("#"+radio.value);
-                console.log(elemento.getAttribute('visible'));
-                console.log(elemento.getAttributeNames());
+                obj = elemento;
+                //console.log(elemento.getAttribute('visible'));
+                //console.log(elemento.getAttributeNames());
 
                 if(elemento.getAttribute('visible') == false){
                   elemento.setAttribute('visible',true);
-                  console.log("ligado");
+                  console.log(elemento.value + "ligado");
                 }else{
                   elemento.setAttribute('visible',false);  
-                  console.log("desligado");
+                  console.log(elemento.value + "desligado");
                 }
-
 
               });
             });
 
+            botao = document.querySelector('#btnConfirma');
+            botao.addEventListener('click',()=>{
+              let posx = document.querySelector("#pox");
+              let posy = document.querySelector("#poy");
+              let posz = document.querySelector("#poz");
+
+              let rotx = document.querySelector("#pox");
+              let roty = document.querySelector("#poy");
+              let rotz = document.querySelector("#poz");
+              
+              let novaposicao = posx + " " + posy + " " + posz;
+              let novarotacao = rotx + " " + roty + " " + rotz;
+              obj.setAttribute('position', novaposicao);
+              obj.setAttribute('rotation', novarotacao);
+
+            }
+          )
+             
 
 			 /*const sky = document.querySelector("#ambiente");
             document.addEventListener('mouseup', () => {
