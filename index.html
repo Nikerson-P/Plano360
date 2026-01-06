@@ -86,11 +86,12 @@
     	 document.addEventListener('DOMContentLoaded', () => {
             document.querySelectorAll('input[name="opcao"]').forEach(radio => {
               radio.addEventListener('change', () => {
-              console.log(radio.value, radio.checked);
+                console.log(radio.value, radio.checked);
 
-                const valor = radio.value.trim();
-                const elemento = document.querySelector("#"+valor);
+                const elemento = document.querySelector("#"+radio.value);
                 console.log(elemento.getAttribute('visible'));
+                console.log(elemento.getAttributeNames());
+
                 if(elemento.getAttribute('visible') == 'false'){
                   elemento.setAttribute('visible','true');
                 }else{
