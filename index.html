@@ -90,6 +90,7 @@
 
                 const valor = radio.value.trim();
                 const elemento = document.querySelector("#"+valor);
+                console.log(elemento.getAttribute('visible'));
                 if(elemento.getAttribute('visible') == 'false'){
                   elemento.setAttribute('visible','true');
                 }else{
