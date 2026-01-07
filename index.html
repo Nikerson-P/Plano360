@@ -56,12 +56,33 @@
   </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-            function ativar_desativar(){
-              animacao = document.querySelector('#animacao')
-              console.log(animacao);
-              animacao.components['animation__Rot'].pause();
-              console.log("animacao");
-            }
+            const menu = document.querySelector('#menu');
+  const animacao = document.querySelector('#animacao'); // sua entity que gira
+  let animationActive = true;
+  let hotspotsVisible = false;
+
+  menu.addEventListener('change', (e) => {
+    const value = e.target.value;
+
+    if (value === 'toggle-animation') {
+      if (animationActive) {
+        animacao.components['animation__Rot'].pause(); // pausa
+      } else {
+        animacao.components['animation__Rot'].play(); // retoma
+      }
+      animationActive = !animationActive;
+    }
+
+    if (value === 'toggle-hotspots') {
+      document.querySelectorAll('.hotspot').forEach(h => {
+        h.setAttribute('visible', !hotspotsVisible);
+      });
+      hotspotsVisible = !hotspotsVisible;
+    }
+
+    // Resetar dropdown para não ficar selecionado
+    e.target.value = '';
+  });
 
             function mostrar_esconder(){
 
