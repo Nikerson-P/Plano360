@@ -84,6 +84,13 @@
       <option value="mesas">Mesas</option>
     </select>
     <input type="button" id="btnSelecionar" value="Confirmar Fundo"/>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    <input type="button" id="limparTela" value="Remover Pontos"/>
+
     </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
@@ -155,9 +162,34 @@
               const fundo = document.querySelector('#ambiente');
               const valor = document.querySelector('#SelecionarFundo').value;
               fundo.setAttribute('src','#'+ valor);
+             });
+
+             btnLimparTudo = document.querySelector('#limparTela');
+             btnLimparTudo.addEventListener('click',()=>{
+                  const tela1 = document.querySelector('#btnCentroShowroom');
+                  const tela2 = document.querySelector('#btnFitas');
+                  const tela3 = document.querySelector('#btnMesas');
+                  const tela4 = document.querySelector('#btnArandelaDecor1');
+                  const tela5 = document.querySelector('#btnArandelaDecor2');
+                  const tela6 = document.querySelector('#btnBalizadores');
+                  const tela7 = document.querySelector('#btnPendentes');
+                  const tela8 = document.querySelector('#btnMesaAwei');
+                  const tela9 = document.querySelector('#btnRefletores');
+
+
+                  tela1.setAttribute('visible',false);
+                  tela2.setAttribute('visible',false);
+                  tela3.setAttribute('visible',false);
+                  tela4.setAttribute('visible',false);
+                  tela5.setAttribute('visible',false);
+                  tela6.setAttribute('visible',false);
+                  tela7.setAttribute('visible',false);
+                  tela8.setAttribute('visible',false);
+                  tela9.setAttribute('visible',false);
+                  
              })
             
-          
+             
              
 
 			 /*const sky = document.querySelector("#ambiente");
