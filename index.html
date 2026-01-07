@@ -12,7 +12,7 @@
       <label>Menu<i class="fa-solid fa-list"></i></label>
     </div>
     <div id="cenaPrincipal">
-            <a-scene embedded cursor="rayOrigin:mouse">
+            <a-scene embedded cursor="rayOrigin:mouse" >
               <a-assets>
                 <img id="clique"          src="clique.png" />
                 <img id="refletores"      src="Refletores-spot.jpg" />
@@ -28,7 +28,7 @@
               </a-assets>
               <!-- Câmera no centro -->
                 <a-entity animation="property: rotation; to:0 360 0; dur:600000; loop: true; easing:linear">
-                <a-camera position="0 1.6 0" look-controls="reverseMouseDrag: true">
+                <a-camera position="0 1.6 0" look-controls="reverseMouseDrag: true;magicWindowTrackingEnabled:false" >
                   
                 </a-camera> 
                 </a-entity> 
@@ -182,12 +182,12 @@
                 console.log('Clicou em:', this.el.id);
 
                 const id = this.el.id;
-                
+
               switch(id){
                 case 'btnBalizadores':
                         console.log("balizadores");
                         document.querySelector('#ambiente').setAttribute('src', '#balizadores');
-                       LimparPontos()
+                        LimparPontos()
                         btnRefletores.setAttribute('visible',true);
 
                         btnRefletores.setAttribute('position',posicoesBalizadores.refletores);
