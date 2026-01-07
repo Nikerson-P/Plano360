@@ -97,7 +97,7 @@
               mesas: "1 1.2 6",
               fitas : "2.5 1.2 3.5",
               pendentes: "4 1.2 -1",
-              aradenlaDecor2 : "-4 1.2 1.5" 
+              arandelaDecor2 : "-4 1.2 1.5" 
             }
 
             const rotacoesArandelaDecor1 ={
@@ -191,7 +191,7 @@
               const el = hit[0].object.el;
               console.log('Clicou no id:', el.id);
 
-              const id = el.id.trim();
+              const id = el.id;
               switch(id){
                 case 'btnBalizadores':
                         console.log("balizadores");
@@ -299,11 +299,10 @@
                         btnMesas.setAttribute('position',posicoesArandelaDecor1.mesas);
                         btnPendentes.setAttribute('position',posicoesArandelaDecor1.pendentes);
 
-                        btnArandelaDecor2.setAttribute('rotation',rotacoesArandelaDecor1.aradenlaDecor2);
-                        btnCentroShowroom.setAttribute('rotation',rotacoesArandelaDecor1.centroShowroom);
-                        btnFitas.setAttribute('rotation',rotacoesArandelaDecor1.fitas);
-                        btnMesas.setAttribute('rotation',rotacoesArandelaDecor1.mesas);
-                        btnPendentes.setAttribute('rotation',rotacoesArandelaDecor1.pendentes);
+                        btnArandelaDecor2.setAttribute('rotation',rotacoesArandelaDecor1.rot90);
+                        btnCentroShowroom.setAttribute('rotation',rotacoesArandelaDecor1.rot45);
+                        btnFitas.setAttribute('rotation',rotacoesArandelaDecor1.rot45);
+                        btnPendentes.setAttribute('rotation',rotacoesArandelaDecor1.rot90);
                         
                   break;
                 case 'btnArandelaDecor2':
@@ -350,7 +349,7 @@
 
          
       
-	</script>
+	  </script>
     
   </body>
 </html>
