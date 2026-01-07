@@ -14,8 +14,8 @@
         <label for="menu">Opções:</label>
         <select id="menu">
           <option value="">-- Selecionar --</option>
-          <option value="toggle-animation">Desativar/Ativar animação</option>
-          <option value="toggle-hotspots">Mostrar/Esconder hotspots</option>
+          <option onclick="">Desativar/Ativar animação</option>
+          <option onclick="">Mostrar/Esconder hotspots</option>
         </select>
       </div>
 
@@ -36,7 +36,7 @@
                 <img id="home"            src="icone.png" />
               </a-assets>
               <!-- Câmera no centro -->
-                <a-entity animation="property: rotation; to:0 360 0; dur:600000; loop: true; easing:linear">
+                <a-entity id="animacao" animation__Rot="property: rotation; to:0 360 0; dur:600000; loop: true; easing:linear">
                 <a-camera position="0 1.6 0" look-controls="reverseMouseDrag: true;magicWindowTrackingEnabled:false" >
                   
                 </a-camera> 
@@ -57,7 +57,14 @@
   </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-            
+            function ativar_desativar(){
+              animacao = document.querySelector('#animacao')
+              animacao.components['animation__Rot'].pause();
+            }
+
+            function mostrar_esconder(){
+
+            }
 
             const sky =                  document.querySelector("#ambiente");
             const btnCentroShowroom =    document.querySelector("#btnCentroShowroom");
