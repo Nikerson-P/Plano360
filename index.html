@@ -6,233 +6,46 @@
     <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
   </head>
   <body>
-    <div id="container-scene" style="width:1024px;height:800px;float:left">
     <a-scene embedded>
       <a-assets>
-        <img id="clique" src="clique.png" />
-        <img id="refletores" src="Refletores-spot.jpg" />
-        <img id="arandela1" src="arandela-decor.jpg" />
-        <img id="arandela2" src="arandela-decor2.jpg" />
-        <img id="awei-mesa" src="awei-mesa.jpg" />
-        <img id="fitas" src="fitas.jpg" />
-        <img id="balizadores" src="balizadores.jpg" />
+        <img id="clique"          src="clique.png" />
+        <img id="refletores"      src="Refletores-spot.jpg" />
+        <img id="arandela1"       src="arandela-decor.jpg" />
+        <img id="arandela2"       src="arandela-decor2.jpg" />
+        <img id="awei-mesa"       src="awei-mesa.jpg" />
+        <img id="fitas"           src="fitas.jpg" />
+        <img id="balizadores"     src="balizadores.jpg" />
         <img id="centro_showroom" src="centro_showroom.jpg" />
-        <img id="pendentes" src="pendentes.jpg" />
-		    <img id="mesas" src="mesas.jpg" />
-        <img id="home"  src="icone.png" />
+        <img id="pendentes"       src="pendentes.jpg" />
+		    <img id="mesas"           src="mesas.jpg" />
+        <img id="home"            src="icone.png" />
       </a-assets>
       <!-- Câmera no centro -->
         <a-camera cursor="rayOrigin: mouse" raycaster="objects: .hotspot" position="0 1.6 0" look-controls="reverseMouseDrag: true">
             <a-entity postion="0 1.2 -1">
 
-              <a-image visible="true" class="hotspot" data-raycastable width="1" height="1" transparent="true" id="btnHome" src="#home" billboard></a-image> 
+              <a-text visible="true" class="hotspot" data-raycastable  id="btnHome" value="Home" billboard></a-text> 
             </a-entity>
-
         </a-camera>  
       <a-entity >
         <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 0 0"></a-sky>
       </a-entity>
-      
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
-			      <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""                      class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
-                
-
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+			      <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
+            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
     </a-scene>
-    </div>
-    <!--<div id="controle_mundo" style="float: left;">
 
-      <label>Controle de rotação</label></div><br>
-      <label>ArandelaDecor1</label>       <input type="radio" name="opcao" value="btnArandelaDecor1"/><br>
-      <label>ArandelaDecor2</label>       <input type="radio" name="opcao" value="btnArandelaDecor2"/><br>
-      <label>Balizadores</label>          <input type="radio" name="opcao" value="btnBalizadores"/><br>
-      <label>Centro Showroom</label>      <input type="radio" name="opcao" value="btnCentroShowroom"/><br>
-      <label>Fitas</label>                <input type="radio" name="opcao" value="btnFitas"/><br>
-      <label>Mesa Awei</label>            <input type="radio" name="opcao" value="btnMesas"/><br>
-      <label>Mesas</label>                <input type="radio" name="opcao" value="btnMesaAwei"/><br>
-      <label>Pendentes</label>            <input type="radio" name="opcao" value="btnPendentes"/><br>
-      <label>Refletores</label>           <input type="radio" name="opcao" value="btnRefletores"/><br>
-    </br>
-      <label>Controle de posições</label><br>
-      <label>Pos X</label>
-      <input type="number" name="posX" id="pox"/><br>
-      <label>Pos Y</label>
-      <input type="number" name="posY" id="poy"/><br>
-      <label>Pos Z</label>
-      <input type="number" name="posZ" id="poz"/><br>
-    </br>
-      <label>Controle de rotação</label><br>
-      <label>Pos X</label>
-      <input type="number" name="rotX" id="rox"/><br>
-      <label>Pos Y</label>
-      <input type="number" name="rotY" id="roy"/><br>
-      <label>Pos Z</label>
-      <input type="number" name="rotZ" id="roz"/><br>
-    </br>
-    <input type="button" id="btnConfirma" value="Atualiza"/>
-    </br></br></br>
-    <label>Selecionar o fundo:</label>
-    <select id="SelecionarFundo">
-      <option value="">Selecionar</option>
-      <option value="refletores">Refletores</option>
-      <option value="arandela1">ArandelaDecor1</option>
-      <option value="arandela2">ArandelaDecor2</option>
-      <option value="awei-mesa">Awei-mesa</option>
-      <option value="fitas">Fitas</option>
-      <option value="balizadores">Balizadores</option>
-      <option value="pendentes">Pendentes</option>
-      <option value="centro_showroom">Centro Showroom</option>
-      <option value="mesas">Mesas</option>
-    </select>
-    <input type="button" id="btnSelecionar" value="Confirmar Fundo"/>
-    </br>
-    </br>
-    </br>
-    </br>
-    </br>
-    <input type="button" id="limparTela" value="Remover Pontos"/>
-
-    </div>
-  -->
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-            let obj;
-            document.querySelectorAll('input[name="opcao"]').forEach(radio => {
-              radio.addEventListener('change', () => {
-                console.log(radio.value, radio.checked);
-                
-                const elemento = document.querySelector("#"+radio.value);
-                obj = elemento;
-                //console.log(elemento.getAttribute('visible'));
-                //console.log(elemento.getAttributeNames());
-
-                if(elemento.getAttribute('visible') == false){
-                  elemento.setAttribute('visible',true);
-                  radio.setAttribute('background-color','blue');
-                  console.log(elemento.id + "ligado");
-                  let posicaoAntiga = elemento.getAttribute('position');
-                  let posx = document.querySelector("#pox");
-                  let posy = document.querySelector("#poy");
-                  let posz = document.querySelector("#poz");
-
-                  posx.value = posicaoAntiga.x;
-                  posy.value = posicaoAntiga.y;
-                  posz.value = posicaoAntiga.z;
-
-                  let rotacaoAntiga = elemento.getAttribute('rotation');
-                  let rotx = document.querySelector("#rox");
-                  let roty = document.querySelector("#roy");
-                  let rotz = document.querySelector("#roz");
-
-                }else{
-                  elemento.setAttribute('visible',false);  
-                  radio.setAttribute('background-color','red');
-                  console.log(elemento.id + "desligado");
-                }
-
-              });
-            });
-
-            botao = document.querySelector('#btnConfirma');
-            botao.addEventListener('click',()=>{
-              console.log(obj);
-              let posx = document.querySelector("#pox").value;
-              let posy = document.querySelector("#poy").value;
-              let posz = document.querySelector("#poz").value;
-
-              let rotx = document.querySelector("#rox").value;
-              let roty = document.querySelector("#roy").value;
-              let rotz = document.querySelector("#roz").value;
-              
-              
-                  
-                  obj.setAttribute('position', {
-                    x: Number(pox.value),
-                    y: Number(poy.value),
-                    z: Number(poz.value)
-                  });
-
-                  obj.setAttribute('rotation', {
-                    x: Number(rox.value),
-                    y: Number(roy.value),
-                    z: Number(roz.value)
-                  });
-             });
-
-             botaoSelecionar = document.querySelector('#btnSelecionar');
-             botaoSelecionar.addEventListener('click',()=>{
-              const fundo = document.querySelector('#ambiente');
-              const valor = document.querySelector('#SelecionarFundo').value;
-              fundo.setAttribute('src','#'+ valor);
-             });
-
-             btnLimparTudo = document.querySelector('#limparTela');
-             btnLimparTudo.addEventListener('click',()=>{
-                  const tela1 = document.querySelector('#btnCentroShowroom');
-                  const tela2 = document.querySelector('#btnFitas');
-                  const tela3 = document.querySelector('#btnMesas');
-                  const tela4 = document.querySelector('#btnArandelaDecor1');
-                  const tela5 = document.querySelector('#btnArandelaDecor2');
-                  const tela6 = document.querySelector('#btnBalizadores');
-                  const tela7 = document.querySelector('#btnPendentes');
-                  const tela8 = document.querySelector('#btnMesaAwei');
-                  const tela9 = document.querySelector('#btnRefletores');
-
-
-                  tela1.setAttribute('visible',false);
-                  tela2.setAttribute('visible',false);
-                  tela3.setAttribute('visible',false);
-                  tela4.setAttribute('visible',false);
-                  tela5.setAttribute('visible',false);
-                  tela6.setAttribute('visible',false);
-                  tela7.setAttribute('visible',false);
-                  tela8.setAttribute('visible',false);
-                  tela9.setAttribute('visible',false);
-
-                  tela2.setAttribute('position','0 0 0');
-                  tela2.setAttribute('rotation','0 0 0');
-                  tela3.setAttribute('position','0 0 0');
-                  tela3.setAttribute('rotation','0 0 0');
-                  tela4.setAttribute('position','0 0 0');
-                  tela4.setAttribute('rotation','0 0 0');
-                  tela5.setAttribute('position','0 0 0');
-                  tela5.setAttribute('rotation','0 0 0');
-                  tela6.setAttribute('position','0 0 0');
-                  tela6.setAttribute('rotation','0 0 0');
-                  tela7.setAttribute('position','0 0 0');
-                  tela7.setAttribute('rotation','0 0 0');
-                  tela8.setAttribute('position','0 0 0');
-                  tela8.setAttribute('rotation','0 0 0');
-                  tela9.setAttribute('position','0 0 0');
-                  tela9.setAttribute('rotation','0 0 0');
-                  
-
-                  let rotx = document.querySelector("#rox");
-                  let roty = document.querySelector("#roy");
-                  let rotz = document.querySelector("#roz");
-                  let posx = document.querySelector("#pox");
-                  let posy = document.querySelector("#poy");
-                  let posz = document.querySelector("#poz");
-
-                  rotx.setAttribute('value','0');
-                  roty.setAttribute('value','0');
-                  rotz.setAttribute('value','0');
-
-                  posx.setAttribute('value','0');
-                  posx.setAttribute('value','0');
-                  posx.setAttribute('value','0');
-             })
             
-             
-             
 
-			 /*const sky = document.querySelector("#ambiente");
+			 const sky = document.querySelector("#ambiente");
             document.addEventListener('mouseup', () => {
 			      const camera = document.querySelector('a-scene').camera;
 			
@@ -240,53 +53,53 @@
             raycaster.setFromCamera({ x: 0, y: 0 }, camera);
         
             const botoes = document.querySelectorAll('.hotspot');
-          const objetos = [...botoes].map(b => b.object3D);
+            const objetos = [...botoes].map(b => b.object3D);
         
-          const hit = raycaster.intersectObjects(objetos, true);
+            const hit = raycaster.intersectObjects(objetos, true);
         
             if (hit.length) {
               const el = hit[0].object.el;
               console.log('Clicou no id:', el.id);
 
-            const id = el.id.trim();
-            switch(id){
-              case 'btnBalizadores':
-                console.log("balizadores");
-                //document.querySelector('#ambiente').setAttribute('src', '#balizadores');
-                break;
-              case 'btnRefletores':
-                console.log("refletores");
-                //document.querySelector('#ambiente').setAttribute('src', '#refletores');
-                break;
-              case 'btnMesas':
-                console.log("Mesa");
-                //document.querySelector('#ambiente').setAttribute('src', '#mesas');
-                break;
-              case 'btnMesaAwei':
-                console.log("Mesa Awei");
-                //document.querySelector('#ambiente').setAttribute('src', '#mesas');
-                break;
-              case 'btnFitas':
-                console.log("Fitas");
-                //document.querySelector('#ambiente').setAttribute('src', '#mesas');
-                break;
-              case 'btnPendentes':
-                console.log("Pendentes");
-                //document.querySelector('#ambiente').setAttribute('src', '#mesas');
-                break;
-              case 'btnArandelaDecor1':
-                console.log("ArandelaDecor1");
-                //document.querySelector('#ambiente').setAttribute('src', '#mesas');
-                break;
-              case 'btnArandelaDecor2':
-                console.log("ArandelaDecor2");
-                //document.querySelector('#ambiente').setAttribute('src', '#mesas');
-                break;
-              default:
-                console.log("nenhum ");
-                
-              }
-          }*/
+              const id = el.id.trim();
+              switch(id){
+                case 'btnBalizadores':
+                  console.log("balizadores");
+                  //document.querySelector('#ambiente').setAttribute('src', '#balizadores');
+                  break;
+                case 'btnRefletores':
+                  console.log("refletores");
+                  //document.querySelector('#ambiente').setAttribute('src', '#refletores');
+                  break;
+                case 'btnMesas':
+                  console.log("Mesa");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                  break;
+                case 'btnMesaAwei':
+                  console.log("Mesa Awei");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                  break;
+                case 'btnFitas':
+                  console.log("Fitas");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                  break;
+                case 'btnPendentes':
+                  console.log("Pendentes");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                  break;
+                case 'btnArandelaDecor1':
+                  console.log("ArandelaDecor1");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                  break;
+                case 'btnArandelaDecor2':
+                  console.log("ArandelaDecor2");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                  break;
+                default:
+                  console.log("nenhum ");
+                  
+                }
+          }
       });
 
          
