@@ -21,7 +21,7 @@
         <img id="home"            src="icone.png" />
       </a-assets>
       <!-- Câmera no centro -->
-       
+
         <a-camera cursor="rayOrigin: mouse" raycaster="objects: .hotspot" position="0 1.6 0" look-controls="reverseMouseDrag: true">
             <a-entity postion="0 1.2 -1">
 
@@ -32,12 +32,12 @@
         <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 0 0"></a-sky>
       </a-entity>
             <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+            <a-image visible="false" rotation="0 -45 0" position="-3 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
             <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+            <a-image visible="false" rotation="0 195 0" position="-2.2 1.2 -4"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
 			      <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
-            <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
+            <a-image visible="false" rotation="0 90 0" position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
+            <a-image visible="false" rotation="0 -90 0" position="4 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
             <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
             <a-image visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
     </a-scene>
@@ -46,7 +46,136 @@
     	 document.addEventListener('DOMContentLoaded', () => {
             
 
-			 const sky = document.querySelector("#ambiente");
+            const sky =                  document.querySelector("#ambiente");
+            const btnCentroShowroom =    document.querySelector("#btnCentroShowroom");
+            const btnBalizadores =       document.querySelector("#btnBalizadores");
+            const btnRefletores =        document.querySelector("#btnRefletores");
+            const btnMesas =             document.querySelector("#btnMesas");
+            const btnMesaAwei =          document.querySelector("#btnMesaAwei");
+            const btnFitas =             document.querySelector("#btnFitas");
+            const btnPendentes =         document.querySelector("#btnPendentes");
+            const btnArandelaDecor1 =    document.querySelector("#btnArandelaDecor1");
+            const btnArandelaDecor2 =    document.querySelector("#btnArandelaDecor2");
+
+
+            function LimparPontos(){
+                        btnBalizadores.setAttribute('visible',false);
+                        btnArandelaDecor1.setAttribute('visible',false);
+                        btnArandelaDecor2.setAttribute('visible',false);
+                        btnCentroShowroom.setAttribute('visible',false);
+                        btnFitas.setAttribute('visible',false);
+                        btnMesaAwei.setAttribute('visible',false);
+                        btnMesas.setAttribute('visible',false);
+                        btnPendentes.setAttribute('visible',false);
+                        btnRefletores.setAttribute('visible',false);
+            }
+
+            //posições e rotações dos botoes que ficam na Imagem Centro Showroom 
+            const posicoesCentroShowroom = {
+                pendentes : "4 1.2 0",
+                mesas : "-2.2 1.2 -4",
+                fitas : "-2 1.2 -1",
+                balizadores: "-3 1.2 0"
+            }
+            const rotacoesCentroShowroom = {
+                pendentes : "0 -90 0",
+                mesas : "0 195 0",
+                fitas : "0 90 0",
+                balizadores: "0 -45 0"
+            }
+            
+            //posições e rotações dos botoes que ficam na Imagem Refletores
+            const posicoesRefletores={
+              centroShowroom : "-1.9 1.2 4",
+              balizadores : "0 1.2 4"
+            }
+
+            
+            //posições e rotações dos botoes que ficam na Imagem arandelaDecor1
+            const posicoesArandelaDecor1 = {
+              centroShowroom : "3.3 1.2 6",
+              mesas: "1 1.2 6",
+              fitas : "2.5 1.2 3.5",
+              pendentes: "4 1.2 -1",
+              aradenlaDecor2 : "-4 1.2 1.5" 
+            }
+
+            const rotacoesArandelaDecor1 ={
+              rot45 : "0 45 0",
+              rot90 : "0 90 0"
+            }
+
+            //posições e rotações dos botoes que ficam na Imagem arandelaDecor2
+            const posicoesArandelaDecor2 ={
+              arandelaDecor1 : "-3 1.2 5",
+              mesas : "0.2 1.2 -4"
+            }
+
+            const rotacoesArandelaDecor2 ={
+              arandelaDecor1 : "0 60 0"
+            }
+
+            //posições e rotações dos botoes que ficam na Imagem awei mesa
+            const posicoesAweimesa= {
+              pendentes : "-0.2 1.2 4",
+              fitas : "-4 1.2 -2",
+              arandelaDecor1 : "1 1.2 2"
+            }
+
+            const rotacoesAweimesa ={
+              fitas : "0 90 0",
+              arandelaDecor1 : "0 45 0"
+            }
+            
+            //posições e rotações dos botoes que ficam na Imagem Fitas
+            const posicoesFitas ={
+              refletores : "-4 1.2 -4",
+              mesaAwei : "-5 1.2 2.5",
+              mesas : "-2.5 1.2 2.5",
+              pendentes : "-8 1.2 0"
+            }
+
+            const rotacoesFitas ={
+              refletores : "0 45 0",
+              mesaAwei : "0 -45 0",
+              mesas : "0 -45 0",
+              pendentes : "0 -75 0"
+            }
+
+            //posições e rotações dos botoes que ficam na Imagem balizadores
+            const posicoesBalizadores = {
+              refletores : "-6 1.2 -0.4"
+            }
+            const rotacoesBalizadores ={
+              refletores : "0 90 0"
+            }
+
+            //posições e rotações dos botoes que ficam na Imagem pendentes
+            const posicoesPendentes = {
+              refletores : "-3.8 1.2 4"
+            }
+            const rotacoesPendentes ={
+              refletores : "0 -45 0"
+            }
+
+            const posicoesMesas = {
+              arandelaDecor2 : "2.5 1.2 8",
+              arandelaDecor1 : "-2 1.2 6",
+              mesaAwei : "0 1.2 5",
+              centroShowroom : "-3 1.2 -1",
+              fitas : "-0.4 1.2 -3"
+            }
+            const rotacoesMesas ={
+              arandelaDecor2 : "0 45 0",
+              arandelaDecor1 : "0 -15 0",
+              centroShowroom : "0 75 0"
+            }
+
+
+
+            
+
+
             document.addEventListener('mouseup', () => {
 			      const camera = document.querySelector('a-scene').camera;
 			
@@ -65,36 +194,152 @@
               const id = el.id.trim();
               switch(id){
                 case 'btnBalizadores':
-                  console.log("balizadores");
-                  //document.querySelector('#ambiente').setAttribute('src', '#balizadores');
+                        console.log("balizadores");
+                        //document.querySelector('#ambiente').setAttribute('src', '#balizadores');
+                       LimparPontos()
+                        btnRefletores.setAttribute('visible',true);
+
+                        btnRefletores.setAttribute('position',posicoesBalizadores.refletores);
+                        btnRefletores.setAttribute('rotation',rotacoesBalizadores.refletores);
                   break;
                 case 'btnRefletores':
                   console.log("refletores");
                   //document.querySelector('#ambiente').setAttribute('src', '#refletores');
+                        LimparPontos()  ;   
+                        btnBalizadores.setAttribute('visible',true);
+                        btnCentroShowroom.setAttribute('visible',true);
+                      
+                        
+                        btnBalizadores.setAttribute('position',posicoesRefletores.balizadores);
+                        btnCentroShowroom.setAttribute('position',posicoesRefletores.centroShowroom);
+
+                       
+
+
                   break;
                 case 'btnMesas':
                   console.log("Mesa");
                   //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnArandelaDecor2.setAttribute('visible',true);
+                        btnCentroShowroom.setAttribute('visible',true);
+                        btnFitas.setAttribute('visible',true);
+                        btnMesaAwei.setAttribute('visible',true);
+
+                        btnArandelaDecor1.setAttribute('position',posicoesMesas.arandelaDecor1);
+                        btnArandelaDecor2.setAttribute('position',posicoesMesas.arandelaDecor2);
+                        btnCentroShowroom.setAttribute('position',posicoesMesas.centroShowroom);
+                        btnFitas.setAttribute('position',posicoesMesas.fitas);
+                        btnMesaAwei.setAttribute('position',posicoesMesas.mesaAwei);
+                        
+
+                        btnArandelaDecor1.setAttribute('rotation',rotacoesMesas.arandelaDecor1);
+                        btnArandelaDecor2.setAttribute('rotation',rotacoesMesas.arandelaDecor2);
+                        btnCentroShowroom.setAttribute('rotation',rotacoesMesas.centroShowroom);
+
                   break;
                 case 'btnMesaAwei':
                   console.log("Mesa Awei");
                   //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+
+                        LimparPontos()
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnFitas.setAttribute('visible',true);
+                        btnPendentes.setAttribute('visible',true);
+                        
+                        btnArandelaDecor1.setAttribute('position',posicoesAweimesa.arandelaDecor1);
+                        btnFitas.setAttribute('position',posicoesAweimesa.fitas);
+                        btnPendentes.setAttribute('position',posicoesAweimesa.pendentes);
+
+                        btnArandelaDecor1.setAttribute('rotation',rotacoesAweimesa.arandelaDecor1);
+                        btnFitas.setAttribute('rotation',rotacoesAweimesa.fitas);
                   break;
                 case 'btnFitas':
                   console.log("Fitas");
                   //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnMesaAwei.setAttribute('visible',true);
+                        btnMesas.setAttribute('visible',true);
+                        btnPendentes.setAttribute('visible',true);
+                        btnRefletores.setAttribute('visible',true);
+
+                        btnMesaAwei.setAttribute('position',posicoesFitas.mesaAwei);
+                        btnMesas.setAttribute('position',posicoesFitas.mesas);
+                        btnPendentes.setAttribute('position',posicoesFitas.pendentes);
+                        btnRefletores.setAttribute('position',posicoesFitas.refletores);
+
+                        btnMesaAwei.setAttribute('rotation',rotacoesFitas.mesaAwei);
+                        btnMesas.setAttribute('rotation',rotacoesFitas.mesas);
+                        btnPendentes.setAttribute('rotation',rotacoesFitas.pendentes);
+                        btnRefletores.setAttribute('rotation',rotacoesFitas.refletores);
                   break;
                 case 'btnPendentes':
                   console.log("Pendentes");
                   //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnArandelaDecor1.setAttribute('position',posicoesPendentes.refletores);
+                        btnArandelaDecor1.setAttribute('rotation',rotacoesPendentes.refletores);
+
                   break;
                 case 'btnArandelaDecor1':
                   console.log("ArandelaDecor1");
                   //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnArandelaDecor2.setAttribute('visible',true);
+                        btnCentroShowroom.setAttribute('visible',true);
+                        btnFitas.setAttribute('visible',true);
+                        btnMesas.setAttribute('visible',true);
+                        btnPendentes.setAttribute('visible',true);
+
+                        btnArandelaDecor2.setAttribute('position',posicoesArandelaDecor1.aradenlaDecor2);
+                        btnCentroShowroom.setAttribute('position',posicoesArandelaDecor1.centroShowroom);
+                        btnFitas.setAttribute('position',posicoesArandelaDecor1.fitas);
+                        btnMesas.setAttribute('position',posicoesArandelaDecor1.mesas);
+                        btnPendentes.setAttribute('position',posicoesArandelaDecor1.pendentes);
+
+                        btnArandelaDecor2.setAttribute('rotation',rotacoesArandelaDecor1.aradenlaDecor2);
+                        btnCentroShowroom.setAttribute('rotation',rotacoesArandelaDecor1.centroShowroom);
+                        btnFitas.setAttribute('rotation',rotacoesArandelaDecor1.fitas);
+                        btnMesas.setAttribute('rotation',rotacoesArandelaDecor1.mesas);
+                        btnPendentes.setAttribute('rotation',rotacoesArandelaDecor1.pendentes);
+                        
                   break;
                 case 'btnArandelaDecor2':
                   console.log("ArandelaDecor2");
                   //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnMesas.setAttribute('visible',true);
+
+                        btnArandelaDecor1.setAttribute('position',posicoesArandelaDecor2.arandelaDecor1);
+                        btnMesas.setAttribute('position',posicoesArandelaDecor2.mesas);
+
+                        btnArandelaDecor1.setAttribute('rotation',rotacoesArandelaDecor2.arandelaDecor1);
+                        
+                  break;
+                case 'btnCentroShowroom':
+                  console.log("ArandelaDecor2");
+                  //document.querySelector('#ambiente').setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnBalizadores.setAttribute('visible',true);
+                        btnFitas.setAttribute('visible',true);
+                        btnMesas.setAttribute('visible',true);
+                        btnPendentes.setAttribute('visible',true);
+                        
+                        btnBalizadores.setAttribute('position',posicoesCentroShowroom.balizadores);
+                        btnFitas.setAttribute('position',posicoesCentroShowroom.fitas);
+                        btnMesas.setAttribute('position',posicoesCentroShowroom.mesas);
+                        btnPendentes.setAttribute('position',posicoesCentroShowroom.pendentes);
+
+                        btnBalizadores.setAttribute('rotation',rotacoesCentroShowroom.balizadores);
+                        btnFitas.setAttribute('rotation',rotacoesCentroShowroom.fitas);
+                        btnMesas.setAttribute('rotation',rotacoesCentroShowroom.mesas);
+                        btnPendentes.setAttribute('rotation',rotacoesCentroShowroom.pendentes);
+
+                        
+
                   break;
                 default:
                   console.log("nenhum ");
