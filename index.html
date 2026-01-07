@@ -8,9 +8,18 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    <div id="menu" >
-      <label>Menu<i class="fa-solid fa-list"></i></label>
-    </div>
+    
+      <!-- Menu Dropdown -->
+      <div id="menu-container">
+        <label for="menu">Opções:</label>
+        <select id="menu">
+          <option value="">-- Selecionar --</option>
+          <option value="toggle-animation">Desativar/Ativar animação</option>
+          <option value="toggle-hotspots">Mostrar/Esconder hotspots</option>
+        </select>
+      </div>
+
+    
     <div id="cenaPrincipal">
             <a-scene embedded cursor="rayOrigin:mouse" >
               <a-assets>
