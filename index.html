@@ -19,12 +19,13 @@
         <img id="centro_showroom" src="centro_showroom.jpg" />
         <img id="pendentes" src="pendentes.jpg" />
 		    <img id="mesas" src="mesas.jpg" />
+        <img id="home"  src="icone.png" />
       </a-assets>
       <!-- Câmera no centro -->
         <a-camera cursor="rayOrigin: mouse" raycaster="objects: .hotspot" position="0 1.6 0" look-controls="reverseMouseDrag: true">
             <a-entity>
 
-              <a-image visible="true" class="hotspot" data-raycastable width="0.2" height="0.2" transparent="true" id="btnHome"></a-image> 
+              <a-image visible="true" class="hotspot" data-raycastable width="0.2" height="0.2" transparent="true" id="btnHome" src="#home" billboard></a-image> 
             </a-entity>
 
         </a-camera>  
