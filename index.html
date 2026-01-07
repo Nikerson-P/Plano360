@@ -58,7 +58,9 @@
     	 document.addEventListener('DOMContentLoaded', () => {
             function ativar_desativar(){
               animacao = document.querySelector('#animacao')
+              console.log(animacao);
               animacao.components['animation__Rot'].pause();
+              console.log("animacao");
             }
 
             function mostrar_esconder(){
