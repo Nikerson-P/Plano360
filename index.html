@@ -140,7 +140,9 @@
               let valorAnima = animacao.components['animation__rot'];
               console.log(valorAnima);
               animacao.components['animation__rot'].pause()
-              
+              if(valorAnima.n.paused === false){
+                animacao.components['animation__rot'].play()
+              }
             }
 
             function LimparPontos(){
