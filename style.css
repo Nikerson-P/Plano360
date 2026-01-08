@@ -22,7 +22,7 @@
 
 #menuConfig{
   position: absolute;
-  float:right;
+  justify-content: flex-end;
   margin-right: 10px;
   margin-top: 20px;
   width: 300px;
