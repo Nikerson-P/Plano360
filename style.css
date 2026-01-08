@@ -21,7 +21,7 @@
 #menu-container {
   position: absolute;
   z-index: 1000;
-  width: 99%;
+  width: 98%;
   font-family: Arial, sans-serif;
   display:flex;
   justify-content: space-between;
