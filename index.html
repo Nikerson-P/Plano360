@@ -24,6 +24,7 @@
         <label class="button" id="btnAtivarMarcadores">Ativar/Desativar marcadores</label></div></br>
     </div>
     <div id="cenaPrincipal">
+      
       <div id="menu-container">
         <div><label id="btnConfig"><i class="fa-solid fa-list"></i></label></div>
         <div><label id="btnHome"><i class="fa-solid fa-house"></i></label></div>
@@ -113,8 +114,13 @@
             })
 
             btnConfig.addEventListener('click',() =>{
-                menuConfig.style.display = "block";
+               let valor =  menuConfig.style.display 
 
+              if(valor == 'none'){
+                menuConfig.style.display = "block";
+              }else{
+                menuConfig.style.display = 'none';  
+              }
             });
             
 

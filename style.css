@@ -21,11 +21,11 @@
 }
 
 #menuConfig{
+  position: absolute;
   width: 100px;
   height: 100px;
-  position: absolute;
   z-index: 1001;
-  display:none;
+  visibility: hidden;
 }
 
 #menu-container {
