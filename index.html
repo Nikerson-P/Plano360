@@ -26,8 +26,9 @@
     <div id="cenaPrincipal">
       
       <div id="menu-container">
-        <div><label id="btnConfig"><i class="fa-solid fa-list fa-2x" size></i></label></div>
         <div><label id="btnHome"><i class="fa-solid fa-house fa-2x"></i></label></div>
+        <div><label id="btnConfig"><i class="fa-solid fa-list fa-2x" ></i></label></div>
+        
       </div>
       <div id="cena">
             <a-scene embedded cursor="rayOrigin:mouse" id="modelo">
@@ -136,7 +137,7 @@
                 console.log(fundo);
             }
             function ativarAnimacao(){
-                animacao.components['animation__Rot'].pause()
+                animacao.components['animation__rot'].pause()
             }
 
             function LimparPontos(){
