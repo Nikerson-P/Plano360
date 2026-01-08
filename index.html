@@ -99,6 +99,7 @@
             const btnArandelaDecor1 =    document.querySelector("#btnArandelaDecor1");
             const btnArandelaDecor2 =    document.querySelector("#btnArandelaDecor2");
 
+            const menuConfig =           document.querySelector('#menuConfig');
             const btnConfig =            document.querySelector('#btnConfig');
             const btnHome =              document.querySelector('#btnHome');
            
@@ -111,10 +112,12 @@
               mostrarMarcadores();
             })
 
-            btnConfig.addEventListener('click',()=>{
-                
+            btnConfig.addEventListener('click',() =>{
+                menuConfig.style.display = "block";
 
             });
+            
+
             btnHome.addEventListener('click',()=>{
                 console.log("vc clicou no home")
             });

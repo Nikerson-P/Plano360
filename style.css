@@ -25,6 +25,7 @@
   height: 100px;
   position: absolute;
   z-index: 1001;
+  display:none;
 }
 
 #menu-container {
