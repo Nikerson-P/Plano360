@@ -26,8 +26,8 @@
     <div id="cenaPrincipal">
       
       <div id="menu-container">
-        <div><label id="btnConfig"><i class="fa-solid fa-list"></i></label></div>
-        <div><label id="btnHome"><i class="fa-solid fa-house"></i></label></div>
+        <div><label id="btnConfig"><i class="fa-solid fa-list fa-2x" size></i></label></div>
+        <div><label id="btnHome"><i class="fa-solid fa-house fa-2x"></i></label></div>
       </div>
       <div id="cena">
             <a-scene embedded cursor="rayOrigin:mouse" id="modelo">
@@ -115,8 +115,9 @@
 
             btnConfig.addEventListener('click',() =>{
                let valor =  menuConfig.style.display 
+               resultado = getComputedStyle(valor)
               console.log(valor);
-              if(valor == 'none'){
+              if(valor === 'none'){
                 menuConfig.style.display = "block";
               }else{
                 menuConfig.style.display = 'none';  
