@@ -23,11 +23,18 @@
 #menuConfig{
   position: absolute;
   width: 200px;
-  height: 100px;
+  height: 50x;
   background-color: blueviolet;
   border-radius: 2px;
   z-index: 1001;
   display: none;
+}
+.button{
+  background-color: darkblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: larger;
+  font-weight: 200;
+  border: 2px;
 }
 
 #menu-container {
