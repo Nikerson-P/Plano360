@@ -1,6 +1,6 @@
 #cenaPrincipal{
     width: 100%;
-    height: 100%;
+    height: 95%;
 }
 #cena{
   width: 100%;
@@ -9,14 +9,11 @@
 
 #loading{
   width: 100%;
-  height: 100%;
+  height: 95%;
   position: absolute;
   z-index: 1005;
-  
   font-size: x-large;
-  align-items: center;
-  align-self: center;
-  justify-content: center;
+  
 }
 
 #menu-container {
