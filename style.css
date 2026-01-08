@@ -1,15 +1,15 @@
 #cenaPrincipal{
-    width: 100%;
+    width: 98%;
     height: 95%;
 }
 #cena{
-  width: 100%;
+  width: 98%;
   height: 95vh;
 }
 
 #loading{
-  width: 100%;
-  height: 95%;
+  width: 98%;
+  height: 100%;
   position: absolute;
   z-index: 1005;
   font-size: x-large;
@@ -24,7 +24,7 @@
   left: 10px;
   right: 10px;
   z-index: 1000;
-  width: 100%;
+  width: 98%;
   padding: 10px 15px;
   border-radius: 8px;
   font-family: Arial, sans-serif;
