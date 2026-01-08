@@ -11,12 +11,12 @@
   top: 10px;
   left: 10px;
   z-index: 1000;
-  width: 100vh;
+  width: 100%;
   padding: 10px 15px;
   border-radius: 8px;
   font-family: Arial, sans-serif;
   display:flex;
-  justify-content: center;
+  justify-content: space-between;
   flex-grow: 3;
 }
 
