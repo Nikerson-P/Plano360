@@ -114,8 +114,8 @@
             })
 
             btnConfig.addEventListener('click',() =>{
-               let valor =  menuConfig.style.display 
-               resultado = window.getComputedStyle(valor)
+ 
+               resultado = window.getComputedStyle(menuConfig)
               console.log(resultado);
               if(resultado === 'none'){
                 menuConfig.style.display = "block";
