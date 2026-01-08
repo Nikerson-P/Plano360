@@ -17,15 +17,20 @@
   </head>
   <body>
     
-      <!-- Menu Dropdown -->
+      <div id="loading">
+
+        <label for="">Carregando</label>
+
+      </div>
       
 
     
     <div id="cenaPrincipal">
       <div id="menu-container">
-        <div><label id="btnConfig"><i class="fa-solid fa-house"></i></label></div>
+        <div><label id="btnConfig"><i class="fa-solid fa-list"></i></label></div>
         <div><label id="btnHome"><i class="fa-regular fa-house"></i></label></div>
       </div>
+      <div>
             <a-scene embedded cursor="rayOrigin:mouse" >
               <a-assets>
                 <img id="clique"          src="clique.png" />
@@ -59,9 +64,15 @@
                     <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
                     <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
             </a-scene>
+        </div>
   </div>
     <script>
-    	 document.addEventListener('DOMContentLoaded', () => {
+    	 document.addEventListener('loaded', () => {
+            const loading = document.querySelector('#loading');
+            const cenaPrincipal = document.querySelector('#cenaPrincipal');
+
+            loading.style.display = 'none';
+            cenaPrincipal.style.display = 'block';
 
             const sky =                  document.querySelector("#ambiente");
             const btnCentroShowroom =    document.querySelector("#btnCentroShowroom");
@@ -79,6 +90,13 @@
             console.log(btnConfig);
             console.log(btnHome);
 
+            btnConfig.addEventListener('click',()=>{
+                console.log("vc clicou nas configurações")
+            });
+            btnHome.addEventListener('click',()=>{
+                console.log("vc clicou no home")
+            });
+
             function LimparPontos(){
                         btnBalizadores.setAttribute('visible',false);
                         btnArandelaDecor1.setAttribute('visible',false);
@@ -92,28 +110,23 @@
             }
 
             //#region Posições e rotações
-            //posições e rotações dos botoes que ficam na Imagem Centro Showroom 
+            //posições  que ficam na Imagem Centro Showroom 
             const posicoesCentroShowroom = {
                 pendentes : "4 1.2 0",
                 mesas : "-2.2 1.2 -4",
                 fitas : "-2 1.2 -1",
                 balizadores: "-4 1.2 0"
             }
-            const rotacoesCentroShowroom = {
-                pendentes : "0 -90 0",
-                mesas : "0 195 0",
-                fitas : "0 90 0",
-                balizadores: "0 -45 0"
-            }
             
-            //posições e rotações dos botoes que ficam na Imagem Refletores
+            
+            //posições que ficam na Imagem Refletores
             const posicoesRefletores={
               centroShowroom : "-1.9 1.2 4",
               balizadores : "0 1.2 4"
             }
 
             
-            //posições e rotações dos botoes que ficam na Imagem arandelaDecor1
+            //posições que ficam na Imagem arandelaDecor1
             const posicoesArandelaDecor1 = {
               centroShowroom : "3.3 1.2 6",
               mesas: "1 1.2 6",
@@ -122,34 +135,22 @@
               arandelaDecor2 : "-4 1.2 1.5" 
             }
 
-            const rotacoesArandelaDecor1 ={
-              rot45 : "0 45 0",
-              rot90 : "0 90 0"
-            }
+            
 
-            //posições e rotações dos botoes que ficam na Imagem arandelaDecor2
+            //posições que ficam na Imagem arandelaDecor2
             const posicoesArandelaDecor2 ={
               arandelaDecor1 : "-3 1.2 5",
               mesas : "0.2 1.2 -4"
             }
 
-            const rotacoesArandelaDecor2 ={
-              arandelaDecor1 : "0 60 0"
-            }
-
-            //posições e rotações dos botoes que ficam na Imagem awei mesa
+            //posições que ficam na Imagem awei mesa
             const posicoesAweimesa= {
               pendentes : "-0.2 1.2 4",
               fitas : "-4 1.2 -2",
               arandelaDecor1 : "1 1.2 2"
             }
-
-            const rotacoesAweimesa ={
-              fitas : "0 90 0",
-              arandelaDecor1 : "0 45 0"
-            }
             
-            //posições e rotações dos botoes que ficam na Imagem Fitas
+            //posições que ficam na Imagem Fitas
             const posicoesFitas ={
               refletores : "-4 1.2 -4",
               mesaAwei : "-5 1.2 2.5",
@@ -157,29 +158,18 @@
               pendentes : "-8 1.2 0"
             }
 
-            const rotacoesFitas ={
-              refletores : "0 45 0",
-              mesaAwei : "0 -45 0",
-              mesas : "0 -45 0",
-              pendentes : "0 -75 0"
-            }
 
-            //posições e rotações dos botoes que ficam na Imagem balizadores
+            //posições que ficam na Imagem balizadores
             const posicoesBalizadores = {
               refletores : "-6 1.2 -0.4"
             }
-            const rotacoesBalizadores ={
-              refletores : "0 90 0"
-            }
 
-            //posições e rotações dos botoes que ficam na Imagem pendentes
+            //posições que ficam na Imagem pendentes
             const posicoesPendentes = {
               refletores : "-3.8 1.2 4"
             }
-            const rotacoesPendentes ={
-              refletores : "0 -45 0"
-            }
 
+            //posições que ficam na Imagem Mesas
             const posicoesMesas = {
               arandelaDecor2 : "2.5 1.2 8",
               arandelaDecor1 : "-2 1.2 6",
@@ -187,18 +177,13 @@
               centroShowroom : "-3 1.2 -1",
               fitas : "-0.4 1.2 -3"
             }
-            const rotacoesMesas ={
-              arandelaDecor2 : "0 45 0",
-              arandelaDecor1 : "0 -15 0",
-              centroShowroom : "0 75 0"
-            }
 
 //#endregion
             //#region Controle de Eventos
           AFRAME.registerComponent('click-listener', {
             init() {
               this.el.addEventListener('click', () => {
-                console.log('Clicou em:', this.el.id);
+                //console.log('Clicou em:', this.el.id);
 
                 const id = this.el.id;
 
@@ -210,7 +195,7 @@
                         btnRefletores.setAttribute('visible',true);
 
                         btnRefletores.setAttribute('position',posicoesBalizadores.refletores);
-                        btnRefletores.setAttribute('rotation',rotacoesBalizadores.refletores);
+                        
                   break;
                 case 'btnRefletores':
                   //console.log("refletores");
@@ -239,11 +224,6 @@
                         btnFitas.setAttribute('position',posicoesMesas.fitas);
                         btnMesaAwei.setAttribute('position',posicoesMesas.mesaAwei);
                         
-
-                        btnArandelaDecor1.setAttribute('rotation',rotacoesMesas.arandelaDecor1);
-                        btnArandelaDecor2.setAttribute('rotation',rotacoesMesas.arandelaDecor2);
-                        btnCentroShowroom.setAttribute('rotation',rotacoesMesas.centroShowroom);
-
                   break;
                 case 'btnMesaAwei':
                   //console.log("Mesa Awei");
@@ -257,9 +237,6 @@
                         btnArandelaDecor1.setAttribute('position',posicoesAweimesa.arandelaDecor1);
                         btnFitas.setAttribute('position',posicoesAweimesa.fitas);
                         btnPendentes.setAttribute('position',posicoesAweimesa.pendentes);
-
-                        btnArandelaDecor1.setAttribute('rotation',rotacoesAweimesa.arandelaDecor1);
-                        btnFitas.setAttribute('rotation',rotacoesAweimesa.fitas);
                   break;
                 case 'btnFitas':
                   //console.log("Fitas");
@@ -274,11 +251,6 @@
                         btnMesas.setAttribute('position',posicoesFitas.mesas);
                         btnPendentes.setAttribute('position',posicoesFitas.pendentes);
                         btnRefletores.setAttribute('position',posicoesFitas.refletores);
-
-                        btnMesaAwei.setAttribute('rotation',rotacoesFitas.mesaAwei);
-                        btnMesas.setAttribute('rotation',rotacoesFitas.mesas);
-                        btnPendentes.setAttribute('rotation',rotacoesFitas.pendentes);
-                        btnRefletores.setAttribute('rotation',rotacoesFitas.refletores);
                   break;
                 case 'btnPendentes':
                   //console.log("Pendentes");
@@ -286,7 +258,6 @@
                         LimparPontos();
                         btnArandelaDecor1.setAttribute('visible',true);
                         btnArandelaDecor1.setAttribute('position',posicoesPendentes.refletores);
-                        btnArandelaDecor1.setAttribute('rotation',rotacoesPendentes.refletores);
 
                   break;
                 case 'btnArandelaDecor1':
@@ -304,11 +275,6 @@
                         btnFitas.setAttribute('position',posicoesArandelaDecor1.fitas);
                         btnMesas.setAttribute('position',posicoesArandelaDecor1.mesas);
                         btnPendentes.setAttribute('position',posicoesArandelaDecor1.pendentes);
-
-                        btnArandelaDecor2.setAttribute('rotation',rotacoesArandelaDecor1.rot90);
-                        btnCentroShowroom.setAttribute('rotation',rotacoesArandelaDecor1.rot45);
-                        btnFitas.setAttribute('rotation',rotacoesArandelaDecor1.rot45);
-                        btnPendentes.setAttribute('rotation',rotacoesArandelaDecor1.rot90);
                         
                   break;
                 case 'btnArandelaDecor2':
@@ -321,8 +287,6 @@
                         btnArandelaDecor1.setAttribute('position',posicoesArandelaDecor2.arandelaDecor1);
                         btnMesas.setAttribute('position',posicoesArandelaDecor2.mesas);
 
-                        btnArandelaDecor1.setAttribute('rotation',rotacoesArandelaDecor2.arandelaDecor1);
-                        
                   break;
                 case 'btnCentroShowroom':
                    //console.log("ArandelaDecor2");
@@ -337,14 +301,6 @@
                         btnFitas.setAttribute('position',posicoesCentroShowroom.fitas);
                         btnMesas.setAttribute('position',posicoesCentroShowroom.mesas);
                         btnPendentes.setAttribute('position',posicoesCentroShowroom.pendentes);
-
-                       btnBalizadores.setAttribute('rotation',rotacoesCentroShowroom.balizadores);
-                        btnFitas.setAttribute('rotation',rotacoesCentroShowroom.fitas);
-                        btnMesas.setAttribute('rotation',rotacoesCentroShowroom.mesas);
-                        btnPendentes.setAttribute('rotation',rotacoesCentroShowroom.pendentes);
-
-                        
-
                   break;
                 default:
                   console.log("nenhum ");
