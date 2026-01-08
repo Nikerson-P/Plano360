@@ -117,7 +117,7 @@
  
                resultado = window.getComputedStyle(menuConfig)
               console.log(resultado);
-              if(resultado === 'none'){
+              if(resultado.style === 'none'){
                 menuConfig.style.display = "block";
               }else{
                 menuConfig.style.display = 'none';  
