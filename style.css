@@ -22,9 +22,10 @@
 
 #menuConfig{
   position: absolute;
-  width: 200px;
-  height: 50x;
-  background-color: blueviolet;
+  margin-left: 10px;
+  margin-top: 20px;
+  width: 250px;
+  height: 50px;
   border-radius: 2px;
   z-index: 1001;
   display: none;
