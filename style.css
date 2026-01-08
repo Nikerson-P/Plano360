@@ -21,6 +21,7 @@
 }
 
 #menuConfig{
+  display: flex;
   position: absolute;
   justify-content: flex-end;
   margin-right: 10px;

@@ -54,15 +54,15 @@
               <a-entity >
                 <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 0 0"></a-sky>
               </a-entity>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-                    <a-image click-listener visible="true" rotation="0 -45 0" position="-3 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-                    <a-image click-listener visible="true" rotation="0 195 0" position="-2.2 1.2 -4"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
-                    <a-image click-listener visible="true" rotation="0 90 0" position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
-                    <a-image click-listener visible="true" rotation="0 -90 0" position="4 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
+                    <a-image click-listener visible="true"  rotation="0 -45 0"   position="-3 1.2 0"    class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
+                    <a-image click-listener visible="true"  rotation="0 195 0"   position="-2.2 1.2 -4" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
+                    <a-image click-listener visible="true"  rotation="0 90 0"    position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
+                    <a-image click-listener visible="true"  rotation="0 -90 0"   position="4 1.2 0"     class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
             </a-scene>
         </div>
   </div>
@@ -133,14 +133,17 @@
             
             function mostrarMarcadores(){
                 LimparPontos();
-                let fundo = sky.getAttribute('src');
+                let fundo = sky.getAttribute('id');
                 console.log(fundo);
+
             }
             function ativarAnimacao(){
+              //pega o controle de animação
               let valorAnima = animacao.components['animation__rot'];
-              console.log(valorAnima);
+              //console.log(valorAnima);
+              //pega a propriedade que verifica se a animacao esta acontecendo
               let isPlay = valorAnima.isPlaying;
-              console.log(isPlay);
+              
               if(isPlay == false){
                 animacao.components['animation__rot'].play()
               }
@@ -231,26 +234,8 @@
             }
 
 //#endregion
-            //#region Controle de Eventos
-          AFRAME.registerComponent('click-listener', {
-            init() {
-              this.el.addEventListener('click', () => {
-                //console.log('Clicou em:', this.el.id);
-
-                const id = this.el.id;
-
-              switch(id){
-                case 'btnBalizadores':
-                        //console.log("balizadores");
-                        sky.setAttribute('src', '#balizadores');
-                        LimparPontos()
-                        btnRefletores.setAttribute('visible',true);
-
-                        btnRefletores.setAttribute('position',posicoesBalizadores.refletores);
-                        
-                  break;
-                case 'btnRefletores':
-                  //console.log("refletores");
+            //#region Funções para mudança de marcadores
+            function refletores(){
                         sky.setAttribute('src', '#refletores');
                         LimparPontos()  ;   
                         btnBalizadores.setAttribute('visible',true);
@@ -259,61 +244,15 @@
                         
                         btnBalizadores.setAttribute('position',posicoesRefletores.balizadores);
                         btnCentroShowroom.setAttribute('position',posicoesRefletores.centroShowroom);
-                  break;
-                case 'btnMesas':
-                  //console.log("Mesa");
-                        sky.setAttribute('src', '#mesas');
-                        LimparPontos();
-                        btnArandelaDecor1.setAttribute('visible',true);
-                        btnArandelaDecor2.setAttribute('visible',true);
-                        btnCentroShowroom.setAttribute('visible',true);
-                        btnFitas.setAttribute('visible',true);
-                        btnMesaAwei.setAttribute('visible',true);
-
-                        btnArandelaDecor1.setAttribute('position',posicoesMesas.arandelaDecor1);
-                        btnArandelaDecor2.setAttribute('position',posicoesMesas.arandelaDecor2);
-                        btnCentroShowroom.setAttribute('position',posicoesMesas.centroShowroom);
-                        btnFitas.setAttribute('position',posicoesMesas.fitas);
-                        btnMesaAwei.setAttribute('position',posicoesMesas.mesaAwei);
-                        
-                  break;
-                case 'btnMesaAwei':
-                  //console.log("Mesa Awei");
-                        sky.setAttribute('src', '#awei-mesa');
-
+            }
+            function balizadores(){
+                        sky.setAttribute('src', '#balizadores');
                         LimparPontos()
-                        btnArandelaDecor1.setAttribute('visible',true);
-                        btnFitas.setAttribute('visible',true);
-                        btnPendentes.setAttribute('visible',true);
-                        
-                        btnArandelaDecor1.setAttribute('position',posicoesAweimesa.arandelaDecor1);
-                        btnFitas.setAttribute('position',posicoesAweimesa.fitas);
-                        btnPendentes.setAttribute('position',posicoesAweimesa.pendentes);
-                  break;
-                case 'btnFitas':
-                  //console.log("Fitas");
-                        sky.setAttribute('src', '#fitas');
-                        LimparPontos();
-                        btnMesaAwei.setAttribute('visible',true);
-                        btnMesas.setAttribute('visible',true);
-                        btnPendentes.setAttribute('visible',true);
                         btnRefletores.setAttribute('visible',true);
 
-                        btnMesaAwei.setAttribute('position',posicoesFitas.mesaAwei);
-                        btnMesas.setAttribute('position',posicoesFitas.mesas);
-                        btnPendentes.setAttribute('position',posicoesFitas.pendentes);
-                        btnRefletores.setAttribute('position',posicoesFitas.refletores);
-                  break;
-                case 'btnPendentes':
-                  //console.log("Pendentes");
-                        sky.setAttribute('src', '#pendentes');
-                        LimparPontos();
-                        btnArandelaDecor1.setAttribute('visible',true);
-                        btnArandelaDecor1.setAttribute('position',posicoesPendentes.refletores);
-
-                  break;
-                case 'btnArandelaDecor1':
-                  //console.log("ArandelaDecor1");
+                        btnRefletores.setAttribute('position',posicoesBalizadores.refletores);
+            }
+            function arandelaDecor1(){
                         sky.setAttribute('src', '#arandela1');
                         LimparPontos();
                         btnArandelaDecor2.setAttribute('visible',true);
@@ -327,10 +266,8 @@
                         btnFitas.setAttribute('position',posicoesArandelaDecor1.fitas);
                         btnMesas.setAttribute('position',posicoesArandelaDecor1.mesas);
                         btnPendentes.setAttribute('position',posicoesArandelaDecor1.pendentes);
-                        
-                  break;
-                case 'btnArandelaDecor2':
-                  //console.log("ArandelaDecor2");
+            }
+            function arandelaDecor2(){
                         sky.setAttribute('src', '#arandela2');
                         LimparPontos();
                         btnArandelaDecor1.setAttribute('visible',true);
@@ -338,10 +275,8 @@
 
                         btnArandelaDecor1.setAttribute('position',posicoesArandelaDecor2.arandelaDecor1);
                         btnMesas.setAttribute('position',posicoesArandelaDecor2.mesas);
-
-                  break;
-                case 'btnCentroShowroom':
-                   //console.log("ArandelaDecor2");
+            }
+            function Centro(){
                         sky.setAttribute('src', '#centro_showroom');
                         LimparPontos();
                         btnBalizadores.setAttribute('visible',true);
@@ -353,6 +288,103 @@
                         btnFitas.setAttribute('position',posicoesCentroShowroom.fitas);
                         btnMesas.setAttribute('position',posicoesCentroShowroom.mesas);
                         btnPendentes.setAttribute('position',posicoesCentroShowroom.pendentes);
+            }
+            function Fitas(){
+                        sky.setAttribute('src', '#fitas');
+                        LimparPontos();
+                        btnMesaAwei.setAttribute('visible',true);
+                        btnMesas.setAttribute('visible',true);
+                        btnPendentes.setAttribute('visible',true);
+                        btnRefletores.setAttribute('visible',true);
+
+                        btnMesaAwei.setAttribute('position',posicoesFitas.mesaAwei);
+                        btnMesas.setAttribute('position',posicoesFitas.mesas);
+                        btnPendentes.setAttribute('position',posicoesFitas.pendentes);
+                        btnRefletores.setAttribute('position',posicoesFitas.refletores);
+            }
+            function Mesas(){
+                        sky.setAttribute('src', '#mesas');
+                        LimparPontos();
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnArandelaDecor2.setAttribute('visible',true);
+                        btnCentroShowroom.setAttribute('visible',true);
+                        btnFitas.setAttribute('visible',true);
+                        btnMesaAwei.setAttribute('visible',true);
+
+                        btnArandelaDecor1.setAttribute('position',posicoesMesas.arandelaDecor1);
+                        btnArandelaDecor2.setAttribute('position',posicoesMesas.arandelaDecor2);
+                        btnCentroShowroom.setAttribute('position',posicoesMesas.centroShowroom);
+                        btnFitas.setAttribute('position',posicoesMesas.fitas);
+                        btnMesaAwei.setAttribute('position',posicoesMesas.mesaAwei);
+            }
+            function Pendentes(){
+                        sky.setAttribute('src', '#pendentes');
+                        LimparPontos();
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnArandelaDecor1.setAttribute('position',posicoesPendentes.refletores);
+            }
+            function MesaAwei(){
+                        sky.setAttribute('src', '#awei-mesa');
+
+                        LimparPontos()
+                        btnArandelaDecor1.setAttribute('visible',true);
+                        btnFitas.setAttribute('visible',true);
+                        btnPendentes.setAttribute('visible',true);
+                        
+                        btnArandelaDecor1.setAttribute('position',posicoesAweimesa.arandelaDecor1);
+                        btnFitas.setAttribute('position',posicoesAweimesa.fitas);
+                        btnPendentes.setAttribute('position',posicoesAweimesa.pendentes);
+            }
+            //#endregion
+            //#region Controle de Eventos
+          AFRAME.registerComponent('click-listener', {
+            init() {
+              this.el.addEventListener('click', () => {
+                //console.log('Clicou em:', this.el.id);
+
+                const id = this.el.id;
+
+              switch(id){
+                case 'btnBalizadores':
+                        //console.log("balizadores");
+                        
+                       balizadores();
+                        
+                  break;
+                case 'btnRefletores':
+                  //console.log("refletores");
+                        refletores();
+                  break;
+                case 'btnMesas':
+                  //console.log("Mesa");
+                       Mesas()
+                        
+                  break;
+                case 'btnMesaAwei':
+                  //console.log("Mesa Awei");
+                        MesaAwei();
+                  break;
+                case 'btnFitas':
+                  //console.log("Fitas");
+                        Fitas();
+                  break;
+                case 'btnPendentes':
+                  //console.log("Pendentes");
+                        Pendentes();
+
+                  break;
+                case 'btnArandelaDecor1':
+                  //console.log("ArandelaDecor1");
+                        arandelaDecor1();
+                        
+                  break;
+                case 'btnArandelaDecor2':
+                  //console.log("ArandelaDecor2");
+                        arandelaDecor2();
+                  break;
+                case 'btnCentroShowroom':
+                   //console.log("ArandelaDecor2");
+                        Centro();
                   break;
                 default:
                   console.log("nenhum ");
