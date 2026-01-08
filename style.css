@@ -23,7 +23,6 @@
 #menuConfig{
   display: flex;
   position: absolute;
-  justify-content: flex-end;
   margin-right: 10px;
   margin-top: 20px;
   width: 300px;
@@ -33,6 +32,9 @@
   box-shadow: 2px;
   z-index: 1001;
   display: none;
+}
+#menuConfig label{
+  justify-content: flex-end;
 }
 .button{
   font-family: 'Times New Roman', Times, serif;
