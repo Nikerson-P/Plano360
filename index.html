@@ -139,9 +139,12 @@
             function ativarAnimacao(){
               let valorAnima = animacao.components['animation__rot'];
               console.log(valorAnima);
-              animacao.components['animation__rot'].pause()
-              if(valorAnima.data.isPlaying === false){
+              let isPlay = valorAnima.data.isPlaying;
+              if(isPlay == false){
                 animacao.components['animation__rot'].play()
+              }
+              else{
+                animacao.components['animation__rot'].pause()
               }
             }
 
