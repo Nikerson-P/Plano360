@@ -1,6 +1,6 @@
 #cenaPrincipal{
     width: 95%;
-    height: 95%;
+    height: 98%;
 }
 #cena{
   width: 95%;
@@ -9,7 +9,7 @@
 
 #loading{
   width: 95%;
-  height: 100%;
+  height: 98%;
   position: absolute;
   z-index: 1005;
   font-size: x-large;
