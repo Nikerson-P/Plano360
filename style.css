@@ -11,12 +11,10 @@
   top: 10px;
   left: 10px;
   z-index: 1000;
-  
+  width: 100vh;
   padding: 10px 15px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   font-family: Arial, sans-serif;
-
   display:flex;
   justify-content: center;
   flex-grow: 3;
@@ -30,7 +28,7 @@
 
 #menu-container label:hover {
   font-weight: bold;
-  font-size: small;
+  font-size: xx-large;
 }
 
 
