@@ -16,7 +16,9 @@
     <link rel="stylesheet" type="text/css" href="style.css">
   </head>
   <body>
-    
+    <div id="loading">
+      <label>Carregando...</label>
+    </div>
     <div id="cenaPrincipal">
       <div id="menu-container">
         <div><label id="btnConfig"><i class="fa-solid fa-list"></i></label></div>
@@ -62,11 +64,18 @@
         
        document.addEventListener('DOMContentLoaded', () => {
                 const cena = document.querySelector('#modelo');
+                const cenaPrincipal = document.querySelector('#cenaPrincipal');
+                const loading = document.querySelector('#loading');
+
                 cena.addEventListener('componentinitialized',() =>{
                   console.log('Entrou na inicialização');
+                  cenaPrincipal.style.display = 'none';
+
                 })
                 cena.addEventListener('loaded',()=>{
                   console.log('terminou a inicialização');
+                  cenaPrincipal.style.display = 'block';
+
                 }) 
             
 
