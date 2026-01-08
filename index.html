@@ -140,7 +140,7 @@
               let valorAnima = animacao.components['animation__rot'];
               console.log(valorAnima);
               animacao.components['animation__rot'].pause()
-              if(valorAnima.paused === false){
+              if(valorAnima.data.isPlaying === false){
                 animacao.components['animation__rot'].play()
               }
             }
