@@ -59,8 +59,17 @@
         </div>
   </div>
     <script>
-    	 console.log("teste");
+        const cenaPrincipal = document.querySelector('#cenaPrincipal');
+    	 document.addEventListener('componentinitialized',() =>{
+        console.log('Entrou na inicialização');
+        cenaPrincipal.style.display('none');
+       })
+       document.addEventListener('loaded',()=>{
+        console.log('terminou a inicialização');
+        cenaPrincipal.style.display('block');
+       }) 
        document.addEventListener('DOMContentLoaded', () => {
+
             
 
             const sky =                  document.querySelector("#ambiente");
