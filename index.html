@@ -11,11 +11,6 @@
       <!-- Menu Dropdown -->
       <div id="menu-container">
         <label for="menu">Opções:</label>
-        <select id="menu">
-          <option value="">-- Selecionar --</option>
-          <option onclick="ativar_desativar()">Desativar/Ativar animação</option>
-          <option onclick="">Mostrar/Esconder hotspots</option>
-        </select>
       </div>
 
     
@@ -36,53 +31,27 @@
               </a-assets>
               <!-- Câmera no centro -->
                 <a-entity id="animacao" animation__Rot="property: rotation; to:0 360 0; dur:600000; loop: true; easing:linear">
-                <a-camera position="0 1.6 0" look-controls="reverseMouseDrag: true;magicWindowTrackingEnabled:false" >
+                <a-camera id="cameraPrincipal" position="0 1.6 0" look-controls="reverseMouseDrag: true;magicWindowTrackingEnabled:false" >
                   
                 </a-camera> 
                 </a-entity> 
               <a-entity >
                 <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 0 0"></a-sky>
               </a-entity>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-                    <a-image click-listener visible="true" rotation="0 -45 0" position="-3 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-                    <a-image click-listener visible="true" rotation="0 195 0" position="-2.2 1.2 -4"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
-                    <a-image click-listener visible="true" rotation="0 90 0" position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
-                    <a-image click-listener visible="true" rotation="0 -90 0" position="4 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
-                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnCentroShowroom" src="#clique" ></a-image>
+                    <a-image click-listener visible="true" rotation="0 -45 0" position="-3 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnBalizadores" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnRefletores" src="#clique"></a-image>
+                    <a-image click-listener visible="true" rotation="0 195 0" position="-2.2 1.2 -4"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnMesas" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnMesaAwei" src="#clique"></a-image>
+                    <a-image click-listener visible="true" rotation="0 90 0" position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnFitas" src="#clique"></a-image>
+                    <a-image click-listener visible="true" rotation="0 -90 0" position="4 1.2 0"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnPendentes" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnArandelaDecor1" src="#clique"></a-image>
+                    <a-image click-listener visible="false" rotation="" position=""   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="#cameraPrincipal" id="btnArandelaDecor2" src="#clique"></a-image>
             </a-scene>
   </div>
     <script>
     	 document.addEventListener('DOMContentLoaded', () => {
-            const menu = document.querySelector('#menu');
-  const animacao = document.querySelector('#animacao'); // sua entity que gira
-  let animationActive = true;
-  let hotspotsVisible = false;
-
-  menu.addEventListener('change', (e) => {
-    const value = e.target.value;
-
-    if (value === 'toggle-animation') {
-      if (animationActive) {
-        animacao.components['animation__Rot'].pause(); // pausa
-      } else {
-        animacao.components['animation__Rot'].play(); // retoma
-      }
-      animationActive = !animationActive;
-    }
-
-    if (value === 'toggle-hotspots') {
-      document.querySelectorAll('.hotspot').forEach(h => {
-        h.setAttribute('visible', !hotspotsVisible);
-      });
-      hotspotsVisible = !hotspotsVisible;
-    }
-
-    // Resetar dropdown para não ficar selecionado
-    e.target.value = '';
-  });
+            
 
             function mostrar_esconder(){
 
