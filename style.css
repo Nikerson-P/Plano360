@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
 }
+
 #cena{
   width: 100%;
   height: 98vh;
@@ -17,6 +18,13 @@
   text-align: center;
   justify-content: center;
   justify-items: center;
+}
+
+#menuConfig{
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  z-index: 1001;
 }
 
 #menu-container {
