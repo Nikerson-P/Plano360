@@ -19,7 +19,10 @@
     <div id="loading">
       <label>Carregando...</label>
     </div>
-
+    <div id="menuConfig">
+        <label class="button" id="btnAtivarAnimacao">Ativar/Desativar animacao</label></div></br>
+        <label class="button" id="btnAtivarMarcadores">Ativar/Desativar marcadores</label></div></br>
+    </div>
     <div id="cenaPrincipal">
       <div id="menu-container">
         <div><label id="btnConfig"><i class="fa-solid fa-list"></i></label></div>
@@ -82,8 +85,9 @@
                   cenaPrincipal.style.display = 'block';
                   loading.style.display = 'none'
                 }) 
-            
-
+            const animacao =             document.querySelector('#animacao');
+            const btnAtivarAnimacao =    document.querySelector('#btnAtivarAnimacao');
+            const btnAtivarMarcadores =  document.querySelector('#btnAtivarMarcadores');    
             const sky =                  document.querySelector("#ambiente");
             const btnCentroShowroom =    document.querySelector("#btnCentroShowroom");
             const btnBalizadores =       document.querySelector("#btnBalizadores");
@@ -95,17 +99,35 @@
             const btnArandelaDecor1 =    document.querySelector("#btnArandelaDecor1");
             const btnArandelaDecor2 =    document.querySelector("#btnArandelaDecor2");
 
-            const btnConfig = document.querySelector('#btnConfig');
-            const btnHome = document.querySelector('#btnHome');
-            console.log(btnConfig);
-            console.log(btnHome);
+            const btnConfig =            document.querySelector('#btnConfig');
+            const btnHome =              document.querySelector('#btnHome');
+           
+            
+            btnAtivarAnimacao.addEventListener('click',()=>{
+              ativarAnimacao();
+            })
+
+            btnAtivarMarcadores.addEventListener('click',()=>{
+              mostrarMarcadores();
+            })
 
             btnConfig.addEventListener('click',()=>{
                 console.log("vc clicou nas configurações")
+
             });
             btnHome.addEventListener('click',()=>{
                 console.log("vc clicou no home")
             });
+            
+            
+            function mostrarMarcadores(){
+                LimparPontos();
+                let fundo = sky.getAttribute(src);
+                console.log(fundo);
+            }
+            function ativarAnimacao(){
+                animacao.components['animation__Rot'].pause()
+            }
 
             function LimparPontos(){
                         btnBalizadores.setAttribute('visible',false);
