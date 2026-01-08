@@ -19,7 +19,7 @@
     <div id="loading">
       <label>Carregando...</label>
     </div>
-    
+
     <div id="cenaPrincipal">
       <div id="menu-container">
         <div><label id="btnConfig"><i class="fa-solid fa-list"></i></label></div>
@@ -76,6 +76,7 @@
                 cena.addEventListener('loaded',()=>{
                   console.log('terminou a inicialização');
                   cenaPrincipal.style.display = 'block';
+                  loading.style.backgroundColor = 'none';
 
                 }) 
             
