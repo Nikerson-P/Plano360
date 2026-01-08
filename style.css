@@ -13,12 +13,12 @@
   position: absolute;
   z-index: 1005;
   font-size: x-large;
+  text-align: center;
   
 }
 
 #menu-container {
   position: absolute;
-  float:right;
   top: 10px;
   left: 10px;
   right: 10px;
