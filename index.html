@@ -23,7 +23,7 @@
         <div><label id="btnHome"><i class="fa-regular fa-house"></i></label></div>
       </div>
       <div id="cena">
-            <a-scene embedded cursor="rayOrigin:mouse" >
+            <a-scene embedded cursor="rayOrigin:mouse" id="modelo">
               <a-assets>
                 <img id="clique"          src="clique.png" />
                 <img id="refletores"      src="Refletores-spot.jpg" />
@@ -61,11 +61,11 @@
     <script>
         
        document.addEventListener('DOMContentLoaded', () => {
-                const cenaPrincipal = document.querySelector('#cenaPrincipal');
-                document.addEventListener('componentinitialized',() =>{
+                const cena = document.querySelector('#modelo');
+                cena.addEventListener('componentinitialized',() =>{
                   console.log('Entrou na inicialização');
                 })
-                document.addEventListener('loaded',()=>{
+                cena.addEventListener('loaded',()=>{
                   console.log('terminou a inicialização');
                 }) 
             
