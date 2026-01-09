@@ -23,7 +23,11 @@
     
     <!-- Menu-->
     <div id="menuConfig">
-        <label class="button" id="btnAtivarAnimacao">Ativar/Desativar animacao</label></br>
+        <label class="button" id="btnAtivarAnimacao"><i class="fa-regular fa-eye fa-2x"></i></label></br><!--  <i class="fa-solid fa-eye"></i> versão a ser usada quando mudar o icone-->
+        <label class="button" id="btnFullScreen"><i class="fa-solid fa-expand fa-2x"></i></label></br><!--<i class="fa-solid fa-compress"></i>   versão a ser usada quando mudar o icone-->
+        <label class="button" id="btnFacebook"><i class="fa-brands fa-facebook fa-2x"></i></label></br>
+        <label class="button" id="btnInstagram"><i class="fa-brands fa-instagram fa-2x"></i></label></br>
+        <label class="button" id="btnWhatsapp"><i class="fa-brands fa-whatsapp fa-2x"></i>/label></br>
     </div>
     
     <!-- Cena completo-->
@@ -62,15 +66,15 @@
                     <a-entity >
                       <a-sky id="ambiente" src="centro_showroom.jpg" rotation="0 0 0"></a-sky>
                     </a-entity>
-                          <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
-                          <a-image click-listener visible="true"  rotation="0 -45 0"   position="-3 1.2 0"    class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
-                          <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
-                          <a-image click-listener visible="true"  rotation="0 195 0"   position="-2.2 1.2 -4" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
-                          <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
-                          <a-image click-listener visible="true"  rotation="0 90 0"    position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
-                          <a-image click-listener visible="true"  rotation="0 -90 0"   position="4 1.2 0"     class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
-                          <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
-                          <a-image click-listener visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 180000;loop:true;dir:alternate" visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnCentroShowroom" src="#clique" ></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 190000;loop:true;dir:alternate" visible="true"  rotation="0 -45 0"   position="-3 1.2 0"    class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnBalizadores" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 170000;loop:true;dir:alternate" visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnRefletores" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 160000;loop:true;dir:alternate" visible="true"  rotation="0 195 0"   position="-2.2 1.2 -4" class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesas" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 150000;loop:true;dir:alternate" visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnMesaAwei" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 140000;loop:true;dir:alternate" visible="true"  rotation="0 90 0"    position="-2 1.2 -1"   class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnFitas" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 130000;loop:true;dir:alternate" visible="true"  rotation="0 -90 0"   position="4 1.2 0"     class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnPendentes" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 120000;loop:true;dir:alternate" visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor1" src="#clique"></a-image>
+                          <a-image click-listener animation__Scale="property:scale; to: 2 2 2;dur: 140000;loop:true;dir:alternate" visible="false" rotation=""          position=""            class="hotspot" data-raycastable width="0.6" height="0.6" transparent="true" look-at="[camera]" id="btnArandelaDecor2" src="#clique"></a-image>
                     </a-scene>
               </div>
     </div>
