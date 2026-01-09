@@ -49,6 +49,7 @@ body {
   border-radius: 8px;
   text-align: center;
   z-index: 2000;
+  font-size: x-large;
 }
 
 #loading{

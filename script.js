@@ -50,10 +50,45 @@
                   const btnInstagram = document.querySelector('#btnInstagram');
                   const btnWhatsapp = document.querySelector('#btnWhatsapp');
 
+                  //pega a div principal dos panoramas a centralizada em baixo 
+                  const panoramas = document.querySelector('#panoramas');
+
                   //pegas todas as classes que vao receber uma imagem dinamicamente 
                   const imagens_cenas = document.querySelectorAll('.imagens_cenas');
-                  
+                  //pegas todas as referencia de imagens do assets
+                  const assets_refletores = document.querySelector('refletores');
+                  const assets_arandelas1 = document.querySelector('arandela1');
+                  const assets_arandelas2 = document.querySelector('arandela2');
+                  const assets_awei_mesa = document.querySelector('awei-mesa');
+                  const assets_fitas = document.querySelector('fitas');
+                  const assets_balizadores = document.querySelector('balizadores');
+                  const assets_centro_showroom = document.querySelector('centro_showroom');
+                  const assets_pendentes = document.querySelector('pendentes');
+                  const assets_mesas = document.querySelector('mesas');
 
+                  const listaRefencia =[
+                    assets_arandelas1,
+                    assets_arandelas2,
+                    assets_awei_mesa,
+                    assets_balizadores,
+                    assets_centro_showroom,
+                    assets_fitas,
+                    assets_mesas,
+                    assets_pendentes,
+                    assets_refletores
+                  ];
+
+                  function listar_panoramas(){
+                      imagens_cenas.forEach((el, index) => {
+                        // aplica a referência correspondente
+                        el.setAttribute('src', listaRefencia[index]);
+                      });
+                  }
+
+                  panoramas.addEventListener('click',()=>{
+                    listar_panoramas();
+                  })
+                  
 
                   //abre uma nova guia do facebook Galaxy 
                   btnFacebook.addEventListener('click',()=>{
