@@ -108,11 +108,11 @@
                     
                     if(isPlay == false){
                       animacao.components['animation__rot'].play()
-                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-2x');
+                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-1x');
                     }
                     else{
                       animacao.components['animation__rot'].pause()
-                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-2x');
+                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-1x');
                     }
                   }
 
