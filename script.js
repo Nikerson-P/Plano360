@@ -348,7 +348,7 @@
                 AFRAME.registerComponent('click-listener', {
                   init() {
                     this.el.addEventListener('click', () => {
-                      //console.log('Clicou em:', this.el.id);
+                      console.log('Clicou em:', this.el.id);
 
                       const id = this.el.id;
 
