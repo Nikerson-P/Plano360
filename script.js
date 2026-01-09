@@ -41,7 +41,7 @@
                   
                   //icones do menu config
                   const iconeAtivarAnimacao = document.querySelector('#iconeAtivarAnimacao');
-                  const iconeFullScreen  = document.querySelector('#iconeFullScreen');
+                  
 
                   //botoes do menu config
                   const btnAtivarAnimacao =    document.querySelector('#btnAtivarAnimacao'); 
@@ -50,15 +50,7 @@
                   const btnInstagram = document.querySelector('#btnInstagram');
                   const btnWhatsapp = document.querySelector('#btnWhatsapp');
 
-                  //Entrar e sair do fullscreen
-                  btnFullScreen.addEventListener('click',()=>{
-                        if (document.fullscreenElement) {
-                          document.exitFullscreen(); // Sai do fullscreen
-                        } else {
-                          cena.requestFullscreen(); // Entra no fullscreen
-                        }
-                   })
-
+                  
                   //abre uma nova guia do facebook Galaxy 
                   btnFacebook.addEventListener('click',()=>{
                       window.open('https://www.facebook.com/galaxyledbr/', '_blank');
@@ -116,7 +108,7 @@
                     
                     if(isPlay == false){
                       animacao.components['animation__rot'].play()
-                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye');
+                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-2x');
                     }
                     else{
                       animacao.components['animation__rot'].pause()
