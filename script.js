@@ -61,11 +61,10 @@
                       Centro();
                   });
                   
-                  cena.addEventListener('click',()=>{
+                  cena.addEventListener('modelo',()=>{
                     resultado = window.getComputedStyle(menuConfig)
                     if(resultado == 'block')
                       menuConfig.style.display = 'none';  
-                    
                     });
                   
 
