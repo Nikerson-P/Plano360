@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  justify-content: center; /* centraliza horizontal */
+  align-items: center;     /* centraliza vertical */
+  height: 100vh;           /* altura da tela toda */
+  margin: 0;               /* remove margens padrão */
+}
 
 body {
   display: flex;
