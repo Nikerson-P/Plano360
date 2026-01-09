@@ -61,11 +61,12 @@
                       Centro();
                   });
                   
-                  document.addEventListener('click',()=>{
+                  cenaPrincipal.addEventListener('click',()=>{
                     resultado = window.getComputedStyle(menuConfig)
+                    if(resultado == 'block')
                       menuConfig.style.display = 'none';  
                     
-                  })
+                    });
                   
 
                   function ativarAnimacao(){
