@@ -1,4 +1,12 @@
 
+body {
+  display: flex;
+  justify-content: center; 
+  align-items: center;     
+  height: 100vh;           
+  margin: 0;               
+}
+
 #cenaPrincipal{
     width: 100%;
     height: 97%;
@@ -13,9 +21,16 @@
   right: 10px;
 }
 
+#cenasShowroom{
+  display:none;
+  position: absolute;
+  width: 80%;
+  background-color:antiquewhite;
+}
+
 #loading{
   width: 100%;
-  height: 97%;
+  height: 100%;
   background-color: black;
   color: white;
   position: absolute;
