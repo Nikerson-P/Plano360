@@ -61,7 +61,7 @@
                       Centro();
                   });
                   
-                  cenaPrincipal.addEventListener('click',()=>{
+                  cena.addEventListener('click',()=>{
                     resultado = window.getComputedStyle(menuConfig)
                     if(resultado == 'block')
                       menuConfig.style.display = 'none';  
