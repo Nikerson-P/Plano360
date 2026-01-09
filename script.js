@@ -61,7 +61,7 @@
                       Centro();
                   });
                   
-                  cena.addEventListener('modelo',()=>{
+                  modelo.addEventListener('click',()=>{
                     resultado = window.getComputedStyle(menuConfig)
                     console.log("entrou no bloco ");
                     if(resultado == 'block')
