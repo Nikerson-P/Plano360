@@ -126,6 +126,16 @@
                               btnMesas.setAttribute('visible',false);
                               btnPendentes.setAttribute('visible',false);
                               btnRefletores.setAttribute('visible',false);
+
+                              btnBalizadores.setAttribute('raycaster','enabled:false');
+                              btnArandelaDecor1.setAttribute('raycaster','enabled:false');
+                              btnArandelaDecor2.setAttribute('raycaster','enabled:false');
+                              btnCentroShowroom.setAttribute('raycaster','enabled:false');
+                              btnFitas.setAttribute('raycaster','enabled:false');
+                              btnMesaAwei.setAttribute('raycaster','enabled:false');
+                              btnMesas.setAttribute('raycaster','enabled:false');
+                              btnPendentes.setAttribute('raycaster','enabled:false');
+                              btnRefletores.setAttribute('raycaster','enabled:false');
                   }
 
                   //#region Posições e rotações
@@ -205,6 +215,8 @@
                               btnBalizadores.setAttribute('visible',true);
                               btnCentroShowroom.setAttribute('visible',true);
                             
+                              btnBalizadores.setAttribute('raycaster','enabled:true');
+                              btnCentroShowroom.setAttribute('raycaster','enabled:true');
                               
                               btnBalizadores.setAttribute('position',posicoesRefletores.balizadores);
                               btnCentroShowroom.setAttribute('position',posicoesRefletores.centroShowroom);
@@ -214,6 +226,7 @@
                               LimparPontos()
                               btnRefletores.setAttribute('visible',true);
 
+                              btnRefletores.setAttribute('raycaster','enabled:true');
                               btnRefletores.setAttribute('position',posicoesBalizadores.refletores);
                   }
                   function arandelaDecor1(){
@@ -224,6 +237,12 @@
                               btnFitas.setAttribute('visible',true);
                               btnMesas.setAttribute('visible',true);
                               btnPendentes.setAttribute('visible',true);
+
+                              btnArandelaDecor2.setAttribute('raycaster','enabled:true');
+                              btnCentroShowroom.setAttribute('raycaster','enabled:true');
+                              btnFitas.setAttribute('raycaster','enabled:true');
+                              btnMesas.setAttribute('raycaster','enabled:true');
+                              btnPendentes.setAttribute('raycaster','enabled:true');
 
                               btnArandelaDecor2.setAttribute('position',posicoesArandelaDecor1.arandelaDecor2);
                               btnCentroShowroom.setAttribute('position',posicoesArandelaDecor1.centroShowroom);
@@ -237,6 +256,9 @@
                               btnArandelaDecor1.setAttribute('visible',true);
                               btnMesas.setAttribute('visible',true);
 
+                              btnArandelaDecor1.setAttribute('raycaster','enabled:true');
+                              btnMesas.setAttribute('raycaster','enabled:true');
+
                               btnArandelaDecor1.setAttribute('position',posicoesArandelaDecor2.arandelaDecor1);
                               btnMesas.setAttribute('position',posicoesArandelaDecor2.mesas);
                   }
@@ -247,6 +269,11 @@
                               btnFitas.setAttribute('visible',true);
                               btnMesas.setAttribute('visible',true);
                               btnPendentes.setAttribute('visible',true);
+
+                              btnBalizadores.setAttribute('raycaster','enabled:true');
+                              btnFitas.setAttribute('raycaster','enabled:true');
+                              btnMesas.setAttribute('raycaster','enabled:true');
+                              btnPendentes.setAttribute('raycaster','enabled:true');
                               
                               btnBalizadores.setAttribute('position',posicoesCentroShowroom.balizadores);
                               btnFitas.setAttribute('position',posicoesCentroShowroom.fitas);
@@ -260,6 +287,11 @@
                               btnMesas.setAttribute('visible',true);
                               btnPendentes.setAttribute('visible',true);
                               btnRefletores.setAttribute('visible',true);
+
+                              btnMesaAwei.setAttribute('raycaster','enabled:true');
+                              btnMesas.setAttribute('raycaster','enabled:true');
+                              btnPendentes.setAttribute('raycaster','enabled:true');
+                              btnRefletores.setAttribute('raycaster','enabled:true');
 
                               btnMesaAwei.setAttribute('position',posicoesFitas.mesaAwei);
                               btnMesas.setAttribute('position',posicoesFitas.mesas);
@@ -275,6 +307,12 @@
                               btnFitas.setAttribute('visible',true);
                               btnMesaAwei.setAttribute('visible',true);
 
+                              btnArandelaDecor1.setAttribute('raycaster','enabled:true');
+                              btnArandelaDecor2.setAttribute('raycaster','enabled:true');
+                              btnCentroShowroom.setAttribute('raycaster','enabled:true');
+                              btnFitas.setAttribute('raycaster','enabled:true');
+                              btnMesaAwei.setAttribute('raycaster','enabled:true');
+
                               btnArandelaDecor1.setAttribute('position',posicoesMesas.arandelaDecor1);
                               btnArandelaDecor2.setAttribute('position',posicoesMesas.arandelaDecor2);
                               btnCentroShowroom.setAttribute('position',posicoesMesas.centroShowroom);
@@ -285,6 +323,8 @@
                               sky.setAttribute('src', '#pendentes');
                               LimparPontos();
                               btnArandelaDecor1.setAttribute('visible',true);
+
+                              btnArandelaDecor1.setAttribute('raycaster','enabled:true');
                               btnArandelaDecor1.setAttribute('position',posicoesPendentes.refletores);
                   }
                   function MesaAwei(){
@@ -294,6 +334,10 @@
                               btnArandelaDecor1.setAttribute('visible',true);
                               btnFitas.setAttribute('visible',true);
                               btnPendentes.setAttribute('visible',true);
+
+                              btnArandelaDecor1.setAttribute('raycaster','enabled:true');
+                              btnFitas.setAttribute('raycaster','enabled:true');
+                              btnPendentes.setAttribute('raycaster','enabled:true');
                               
                               btnArandelaDecor1.setAttribute('position',posicoesAweimesa.arandelaDecor1);
                               btnFitas.setAttribute('position',posicoesAweimesa.fitas);
