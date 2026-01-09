@@ -43,10 +43,8 @@
 
 }
 .button{
-  font-family: 'Times New Roman', Times, serif;
-  font-size: larger;
-  font-weight: 200;
   border: 2px;
+  
 }
 
 #menu-container {
