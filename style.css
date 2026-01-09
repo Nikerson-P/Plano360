@@ -30,6 +30,7 @@
   z-index: 1001;
   display: none;
   align-items: center;
+  color: white;
 }
 #menuConfig label{
   justify-content: flex-end;
