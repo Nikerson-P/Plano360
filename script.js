@@ -63,6 +63,7 @@
                   
                   cena.addEventListener('modelo',()=>{
                     resultado = window.getComputedStyle(menuConfig)
+                    console.log("entrou no bloco ");
                     if(resultado == 'block')
                       menuConfig.style.display = 'none';  
                     });
