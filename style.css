@@ -28,7 +28,7 @@
 
 #menuConfig{
   position: absolute;
-  right: 0;
+  right: 10px;
   top: 40px;
   padding: 5px;
   z-index: 1001;
@@ -44,7 +44,7 @@
 }
 .button{
   border: 2px;
-  
+
 }
 
 #menu-container {
