@@ -76,7 +76,7 @@
                   //abre e fecha o menu
                   btnConfig.addEventListener('click',() =>{
       
-                    resultado = window.getComputedStyle(menuConfig)
+                    let resultado = window.getComputedStyle(menuConfig)
                     console.log(resultado.display);
                     if(resultado.display === 'none'){
                       menuConfig.style.display = "block";
@@ -91,8 +91,8 @@
                   });
                   
                   //sai do menu quando clicar em qualquer area fora da div menu 
-                  modelo.addEventListener('click',()=>{
-                    resultado = window.getComputedStyle(menuConfig)
+                  cena.addEventListener('click',()=>{
+                    let resultado = window.getComputedStyle(menuConfig)
                     if(resultado.display === 'block')
                       menuConfig.style.display = 'none';  
                     });
