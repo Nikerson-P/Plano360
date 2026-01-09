@@ -10,6 +10,7 @@
 }
 #containerBtnConfig{
   position: absolute;
+  right: 0;
 }
 
 #loading{
