@@ -63,7 +63,9 @@
                   
                   modelo.addEventListener('click',()=>{
                     resultado = window.getComputedStyle(menuConfig)
-                    console.log("entrou no bloco ");
+                    console.log("entrou no bloco");
+                    console.log(resultado);
+                    console.log(resultado == 'block');
                     if(resultado == 'block')
                       menuConfig.style.display = 'none';  
                     });
