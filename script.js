@@ -53,6 +53,8 @@
                   //pega a div principal dos panoramas a centralizada em baixo 
                   const panoramas = document.querySelector('#panoramas');
 
+                  //pega a div que vai armazenar as cenas 
+                  const cenas_showroom = document.querySelector('#cenasShowroom');
                   //pegas todas as classes que vao receber uma imagem dinamicamente 
                   const imagens_cenas = document.querySelectorAll('.imagens_cenas');
                   //pegas todas as referencia de imagens do assets
@@ -89,6 +91,13 @@
                   panoramas.addEventListener('click',()=>{
                     console.log("entrou na funcao");
                     listar_panoramas();
+                    
+                    let result = window.getComputedStyle(cenas_showroom);
+                    if(result.display === 'none'){
+                        cenas_showroom.style.display = 'flex';
+                    }else{
+                      cenas_showroom.style.display = 'none';
+                    }
                   })
                   
 
