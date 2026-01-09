@@ -81,11 +81,13 @@
                   function listar_panoramas(){
                       imagens_cenas.forEach((el, index) => {
                         // aplica a referência correspondente
+                        console.log('percorreu todas as posições');
                         el.setAttribute('src', listaRefencia[index]);
                       });
                   }
 
                   panoramas.addEventListener('click',()=>{
+                    console.log("entrou na funcao");
                     listar_panoramas();
                   })
                   
