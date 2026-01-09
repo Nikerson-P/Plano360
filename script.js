@@ -73,7 +73,7 @@
 
                   //abre uma nova guia com um layout pronto da guia para conversar com no whatsapp da galaxy
                   btnWhatsapp.addEventListener('click',()=>{
-                        window.open('https://wa.me/5511991526976?text=https://wa.me/5511999999999?text=Ol%C3%A1!%20%F0%9F%91%8B%0A%0AEu%20vim%20do%20tour%20virtual%20e%20tenho%20interesse%20em%20ver%20mais%20dos%20seus%20produtos.%20Poderia%20me%20enviar%20mais%20informa%C3%A7%C3%B5es,%20por%20favor%3F%20%F0%9F%98%8A', '_blank')
+                        window.open('https://wa.me/5511991526976?text=Ol%C3%A1!%20%F0%9F%91%8B%0A%0AEu%20vim%20do%20tour%20virtual%20e%20tenho%20interesse%20em%20ver%20mais%20dos%20seus%20produtos.%20Poderia%20me%20enviar%20mais%20informa%C3%A7%C3%B5es,%20por%20favor%3F%20%F0%9F%98%8A', '_blank')
                   }); 
 
                   //adiciona funcoes aos botoes do menu de configurações

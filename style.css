@@ -25,7 +25,7 @@
 #menuConfig{
   display: flex;
   position: absolute;
-  margin-left: 85% ;
+  margin-left: 95% ;
   margin-top: 30px;
   width: 80x;
   padding: 5px;
@@ -41,7 +41,7 @@
   justify-content: flex-end;
   text-align: center;
   margin-top:2px;
-  
+
 }
 .button{
   font-family: 'Times New Roman', Times, serif;
