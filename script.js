@@ -61,7 +61,13 @@
                       Centro();
                   });
                   
+                  document.addEventListener('click',()=>{
+                    resultado = window.getComputedStyle(menuConfig)
+                      menuConfig.style.display = 'none';  
+                    
+                  })
                   
+
                   function ativarAnimacao(){
                     //pega o controle de animação
                     let valorAnima = animacao.components['animation__rot'];
