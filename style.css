@@ -10,7 +10,6 @@
 }
 #containerBtnConfig{
   position: absolute;
-  right: 0;
 }
 
 #loading{
@@ -50,9 +49,13 @@
 }
 
 #menu-container {
- 
+  position: absolute;
   z-index: 1000;
+  width: 97.5%;
   font-family: Arial, sans-serif;
+  display:flex;
+  justify-content: space-between;
+  flex-grow: 3;
 }
 
 /* Label do menu */
