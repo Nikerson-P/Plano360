@@ -65,8 +65,8 @@
                     resultado = window.getComputedStyle(menuConfig)
                     console.log("entrou no bloco");
                     console.log(resultado);
-                    console.log(resultado == 'block');
-                    if(resultado == 'block')
+                    console.log(resultado.display == 'block');
+                    if(resultado.display == 'block')
                       menuConfig.style.display = 'none';  
                     });
                   
