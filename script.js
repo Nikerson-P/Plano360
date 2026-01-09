@@ -22,7 +22,7 @@
 
                   //pega tods os elementos 
                   const animacao =             document.querySelector('#animacao');
-                  const btnAtivarAnimacao =    document.querySelector('#btnAtivarAnimacao'); 
+                  
                   const sky =                  document.querySelector("#ambiente");
                   const btnCentroShowroom =    document.querySelector("#btnCentroShowroom");
                   const btnBalizadores =       document.querySelector("#btnBalizadores");
@@ -38,7 +38,44 @@
                   const menuConfig =           document.querySelector('#menuConfig');
                   const btnConfig =            document.querySelector('#btnConfig');
                   const btnHome =              document.querySelector('#btnHome');
-                
+                  
+                  //icones do menu config
+                  const iconeAtivarAnimacao = document.querySelector('#iconeAtivarAnimacao');
+                  const iconeFullScreen  = document.querySelector('#iconeFullScreen');
+
+                  //botoes do menu config
+                  const btnAtivarAnimacao =    document.querySelector('#btnAtivarAnimacao'); 
+                  const btnFullScreen = document.querySelector('#btnFullScreen');
+                  const btnFacebook = document.querySelector('#btnFacebook');
+                  const btnInstagram = document.querySelector('#btnInstagram');
+                  const btnWhatsapp = document.querySelector('#btnWhatsapp');
+
+                  //Entrar e sair do fullscreen
+                  btnFullScreen.addEventListener('click',()=>{
+                        if (AFRAME.utils.fullscreen.isFullscreen()) {
+                          AFRAME.utils.fullscreen.exitFullscreen();
+                        } else {
+                          AFRAME.utils.fullscreen.requestFullscreen(cena);
+                        }
+                  })
+
+                  //abre uma nova guia do facebook Galaxy 
+                  btnFacebook.addEventListener('click',()=>{
+                      window.open('https://www.facebook.com/galaxyledbr/', '_blank');
+
+                  })
+
+                  //abare uma nova guia com a pagina do instagram
+                  btnInstagram.addEventListener('click',()=>{
+                      window.open('https://www.instagram.com/galaxyledbr/', '_blank');
+
+                  })
+
+                  //abre uma nova guia com um layout pronto da guia para conversar com no whatsapp da galaxy
+                  btnWhatsapp.addEventListener('click',()=>{
+                        windows.open('https://wa.me/5511991526976?text=https://wa.me/5511999999999?text=Ol%C3%A1!%20%F0%9F%91%8B%0A%0AEu%20vim%20do%20tour%20virtual%20e%20tenho%20interesse%20em%20ver%20mais%20dos%20seus%20produtos.%20Poderia%20me%20enviar%20mais%20informa%C3%A7%C3%B5es,%20por%20favor%3F%20%F0%9F%98%8A', '_blank')
+                  }); 
+
                   //adiciona funcoes aos botoes do menu de configurações
                   btnAtivarAnimacao.addEventListener('click',()=>{
                     ativarAnimacao();
@@ -61,11 +98,9 @@
                       Centro();
                   });
                   
+                  //sai do menu quando clicar em qualquer area fora da div menu 
                   modelo.addEventListener('click',()=>{
                     resultado = window.getComputedStyle(menuConfig)
-                    console.log("entrou no bloco");
-                    console.log(resultado.display);
-                    console.log(resultado.display === 'block');
                     if(resultado.display === 'block')
                       menuConfig.style.display = 'none';  
                     });
@@ -73,6 +108,7 @@
 
                   function ativarAnimacao(){
                     //pega o controle de animação
+                    
                     let valorAnima = animacao.components['animation__rot'];
                     //console.log(valorAnima);
                     //pega a propriedade que verifica se a animacao esta acontecendo
@@ -80,9 +116,11 @@
                     
                     if(isPlay == false){
                       animacao.components['animation__rot'].play()
+                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye');
                     }
                     else{
                       animacao.components['animation__rot'].pause()
+                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-2x');
                     }
                   }
 
