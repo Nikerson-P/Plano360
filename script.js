@@ -50,7 +50,11 @@
                   const btnInstagram = document.querySelector('#btnInstagram');
                   const btnWhatsapp = document.querySelector('#btnWhatsapp');
 
+                  //pegas todas as classes que vao receber uma imagem dinamicamente 
+                  const imagens_cenas = document.querySelectorAll('.imagens_cenas');
                   
+
+
                   //abre uma nova guia do facebook Galaxy 
                   btnFacebook.addEventListener('click',()=>{
                       window.open('https://www.facebook.com/galaxyledbr/', '_blank');
