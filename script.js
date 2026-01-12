@@ -85,6 +85,7 @@
                         // aplica a referência correspondente
                         console.log('percorreu todas as posições');
                         el.setAttribute('src', listaRefencia[index]);
+
                       });
                   }
 
@@ -93,8 +94,10 @@
                     listar_panoramas();
                     
                     let result = window.getComputedStyle(cenas_showroom);
+                    console.log(result.display);
+
                     if(result.display === 'none'){
-                        cenas_showroom.style.display = 'flex';
+                      cenas_showroom.style.display = 'block';
                     }else{
                       cenas_showroom.style.display = 'none';
                     }
