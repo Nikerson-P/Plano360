@@ -54,7 +54,7 @@
                   const panoramas = document.querySelector('#panoramasLabel');
 
                   //pega a div que vai armazenar as cenas 
-                  const cenas_showroom = document.querySelector('divisorias');
+                  const cenas_showroom = document.querySelector('.divisorias');
                   const divCenas = document.querySelector('#cenasShowroom');
                   //pegas todas as classes que vao receber uma imagem dinamicamente 
                   const imagens_cenas = document.querySelectorAll('.imagens_cenas');
@@ -83,7 +83,7 @@
 
                   function listar_panoramas(){
                     console.log("está entrando nas imagens");
-                    console.log(assets_arandelas1);
+                    console.log(assets_arandelas1.src);
                       imagens_cenas.forEach((el, index) => {
                         el.setAttribute('src', listaRefencia[index]);
                       });
@@ -91,16 +91,15 @@
 
                   panoramas.addEventListener('click',()=>{
                     console.log("entrou na funcao");
-                    console.log(cenas_showroom.src);
                     listar_panoramas();
                     
                     let result = window.getComputedStyle(divCenas);
                     console.log(result.display);
                         
                     if(result.display === 'none'){
-                      cenas_showroom.style.display = 'block';
+                      divCenas.style.display = 'block';
                     }else{
-                      cenas_showroom.style.display = 'none';
+                      divCenas.style.display = 'none';
                     }
                   })
                   
