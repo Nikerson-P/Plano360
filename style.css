@@ -35,7 +35,10 @@ body {
   height: 80vh;
   background-color:antiquewhite;
   overflow-y: auto;
+  flex-wrap: wrap;
 }
+
+
 
 .divisoria{
   width: 45%;

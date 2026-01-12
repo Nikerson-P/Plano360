@@ -54,7 +54,6 @@
                   const panoramas = document.querySelector('#panoramasLabel');
 
                   //pega a div que vai armazenar as cenas 
-                  const cenas_showroom = document.querySelector('.divisorias');
                   const divCenas = document.querySelector('#cenasShowroom');
                   //pegas todas as classes que vao receber uma imagem dinamicamente 
                   const imagens_cenas = document.querySelectorAll('.imagens_cenas');
@@ -72,9 +71,10 @@
                   
 
                   function listar_panoramas(){
-                    console.log("está entrando nas imagens");
-                    console.log(assets_arandelas1);
-                    console.log(divCenas);
+
+                    divCenas.forEach(element => {
+                        console.log(element);
+                    });
                   }
 
                   //abre a div que está com os panoramas
