@@ -36,12 +36,14 @@ body {
   background-color:antiquewhite;
   overflow-y: auto;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #cenasShowroom > div{
   flex-shrink: 0 0 auto;
-  justify-content: center;
-  align-items: center;
+ 
+  
 }
 
 .divisoria{
