@@ -13,14 +13,16 @@ body {
   background-color: black;
   color: white;
   position: absolute;
-  z-index: 1005;
+  z-index: 100000;
   font-size: x-large;
-  text-align: center;  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 #cenaPrincipal{
-    width: 100%;
+    width: 97%;
     height: 97%;
 }
 
@@ -31,7 +33,7 @@ body {
 
 #containerBtnConfig{
   position: absolute;
-  right: 10px;
+  right: 13px;
   top:10px
 }
 #btnHome{
@@ -49,23 +51,29 @@ body {
   background-color: whitesmoke;
   overflow-y: auto;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
   border-radius: 5px;
   padding:5px;
 }
 #panoramaFundo{
-  background-color: darkgray;
-  
+  background-color: #00000017;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
+#panoramaTitulo{
+  width: 100%;
+  height: auto;text-decoration: overline;
+  padding-left: 5%;
 
+}
 #cenasShowroom >div {
   width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 #cenasShowroom > div > div{
   flex-shrink: 0 ;
-  align-items: center;
-  justify-content: center;
+
 }
 #cenasShowroom > div > section{
   width: 100%;
@@ -80,6 +88,7 @@ body {
   margin-left: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+  display:flex;
 }
 .divisoria > img{
   width: 100%;
@@ -91,7 +100,7 @@ body {
   bottom: 20px;
   left:50%;
   transform: translateX(-50%);
-  background-color: #4cc3d9;
+  background-color: #00000017;
   color:white;
   padding: 12px 24px;
   border-radius: 8px;
