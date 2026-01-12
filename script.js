@@ -54,7 +54,7 @@
                   const panoramas = document.querySelector('#panoramasLabel');
 
                   //pega a div que vai armazenar as cenas 
-                  const cenas_showroom = document.querySelector('#cenasShowroom');
+                  const cenas_showroom = document.querySelector('divisorias');
                   //pegas todas as classes que vao receber uma imagem dinamicamente 
                   const imagens_cenas = document.querySelectorAll('.imagens_cenas');
                   //pegas todas as referencia de imagens do assets
