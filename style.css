@@ -44,6 +44,7 @@ body {
 
 .divisoria{
   width: 45%;
+  height: auto;
   float:left;
   background-color: rgb(140, 127, 255);
   padding: 2px;
