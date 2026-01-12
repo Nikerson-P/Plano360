@@ -85,7 +85,7 @@
                         // aplica a referência correspondente
                         console.log('percorreu todas as posições');
                         el.setAttribute('src', listaRefencia[index]);
-
+                        console.log(el);
                       });
                   }
 

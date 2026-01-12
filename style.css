@@ -38,10 +38,12 @@ body {
 }
 
 .divisoria{
-  width: 80%;
+  width: 45%;
   background-color: aquamarine;
-  height: 90%;
-
+  height: auto;
+  padding: 2px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
 #panoramas{
