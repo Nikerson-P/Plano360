@@ -74,8 +74,6 @@
                   ]
 
 
-                  console.log(referencia.assets_arandelas1);
-                  console.log(referencia.assets_arandelas2);
 
                   //#region Panoramas
                   function listar_panoramas(){
@@ -91,39 +89,39 @@
                       imagens[7].setAttribute('src',assets_mesas.src);
                       imagens[8].setAttribute('src',assets_pendentes.src);
 
-                      imagens[0].addEventListener('click',()={
+                      imagens[0].addEventListener('click',()=>{
                         LimparPontos();
                         refletores();
                       })
-                      imagens[1].addEventListener('click',()={ 
+                      imagens[1].addEventListener('click',()=>{ 
                         LimparPontos();
                         arandelaDecor1();
                       })
-                      imagens[2].addEventListener('click',()={
+                      imagens[2].addEventListener('click',()=>{
                         LimparPontos();
                         arandelaDecor2();
                       })
-                      imagens[3].addEventListener('click',()={
+                      imagens[3].addEventListener('click',()=>{
                         LimparPontos();
                         MesaAwei();
                       })
-                      imagens[4].addEventListener('click',()={
+                      imagens[4].addEventListener('click',()=>{
                         LimparPontos();
                         balizadores();
                       })
-                      imagens[5].addEventListener('click',()={
+                      imagens[5].addEventListener('click',()=>{
                         LimparPontos();
                         Fitas();
                       })
-                      imagens[6].addEventListener('click',()={
+                      imagens[6].addEventListener('click',()=>{
                         LimparPontos();
                         Centro();
                       })
-                      imagens[7].addEventListener('click',()={
+                      imagens[7].addEventListener('click',()=>{
                         LimparPontos();
                         Mesas();
                       })
-                      imagens[8].addEventListener('click',()={
+                      imagens[8].addEventListener('click',()=>{
                         LimparPontos();
                         Pendentes();
                       })
