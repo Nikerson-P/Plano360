@@ -72,21 +72,22 @@
 
                   function listar_panoramas(){
                       const imagens = divCenas.querySelectorAll('img');
-
-                      for(let i = 0 ; i <= imagens.length;i++){
-                        console.log(imagens);
-                      }
+                      console.log(imagens.length);
+                      //for(let i = 0 ; i <= imagens.length;i++){
+                        
+                     // }
 
                   }
 
                   //abre a div que está com os panoramas
                   panoramas.addEventListener('click',()=>{
-                    //faz a listagem das imagens do paranorama 
-                    listar_panoramas();
+                    
                     //pega o style que está definido 
                     let result = window.getComputedStyle(divCenas);
                     //verifica se esta como none ou flex 
                     if(result.display === 'none'){
+                      //faz a listagem das imagens do paranorama 
+                      listar_panoramas();
                       divCenas.style.display = 'flex';
                     }else{
                       divCenas.style.display = 'none';
