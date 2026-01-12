@@ -86,19 +86,16 @@
                     console.log(assets_arandelas1.src);
                     console.log(listaRefencia.assets_arandelas1);
                     
-                      imagens_cenas.forEach((el, index) => {
-                        console.log('teste entrou no loop')
-                        el.setAttribute('src', listaRefencia[index]);
-                      });
+                    console.log(cenas_showroom);
                   }
 
+                  //abre a div que está com os panoramas
                   panoramas.addEventListener('click',()=>{
-                    console.log("entrou na funcao");
+                    //faz a listagem das imagens do paranorama 
                     listar_panoramas();
-                    
+                    //pega o style que está definido 
                     let result = window.getComputedStyle(divCenas);
-                    console.log(result.display);
-                        
+                    //verifica se esta como none ou flex 
                     if(result.display === 'none'){
                       divCenas.style.display = 'flex';
                     }else{
