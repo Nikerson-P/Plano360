@@ -56,6 +56,7 @@ body {
 }
 #panoramaFundo{
   background-color: #11111114;
+  width: 100%;
   display:flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -63,7 +64,7 @@ body {
 }
 #panoramaTitulo{
   width: 100%;
-  height: auto;
+  
   text-decoration: overline;
   padding-left: 5%;
 }
@@ -90,6 +91,8 @@ body {
   margin-top: 5px;
   margin-bottom: 5px;
   display:flex;
+  flex-wrap: wrap;
+
   box-shadow: 1px 1px 1px 1px #11111140;
 }
 .divisoria > img{
