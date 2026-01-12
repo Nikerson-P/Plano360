@@ -85,6 +85,7 @@
                     console.log("está entrando nas imagens");
                     console.log(assets_arandelas1.src);
                       imagens_cenas.forEach((el, index) => {
+                        console.log('teste entrou no loop')
                         el.setAttribute('src', listaRefencia[index]);
                       });
                   }
@@ -97,7 +98,7 @@
                     console.log(result.display);
                         
                     if(result.display === 'none'){
-                      divCenas.style.display = 'block';
+                      divCenas.style.display = 'flex';
                     }else{
                       divCenas.style.display = 'none';
                     }
