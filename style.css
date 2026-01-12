@@ -39,6 +39,8 @@ body {
 
 .divisoria{
   width: 45%;
+  height:45%;
+  float:left;
   background-color: aquamarine;
   height: auto;
   padding: 2px;
