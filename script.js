@@ -89,41 +89,55 @@
                       imagens[7].setAttribute('src',assets_mesas.src);
                       imagens[8].setAttribute('src',assets_pendentes.src);
 
+                      function fecharAbaPanoramas(){
+                        let result = window.getComputedStyle(divCenas);
+                        if(result.display === 'flex')
+                          divCenas.style.display = 'none';
+                      }
                       imagens[0].addEventListener('click',()=>{
                         LimparPontos();
                         refletores();
+                        fecharAbaPanoramas();
                       })
                       imagens[1].addEventListener('click',()=>{ 
                         LimparPontos();
                         arandelaDecor1();
+                        fecharAbaPanoramas();
                       })
                       imagens[2].addEventListener('click',()=>{
                         LimparPontos();
                         arandelaDecor2();
+                        fecharAbaPanoramas();
                       })
                       imagens[3].addEventListener('click',()=>{
                         LimparPontos();
                         MesaAwei();
+                        fecharAbaPanoramas();
                       })
                       imagens[4].addEventListener('click',()=>{
                         LimparPontos();
                         balizadores();
+                        fecharAbaPanoramas();
                       })
                       imagens[5].addEventListener('click',()=>{
                         LimparPontos();
                         Fitas();
+                        fecharAbaPanoramas();
                       })
                       imagens[6].addEventListener('click',()=>{
                         LimparPontos();
                         Centro();
+                        fecharAbaPanoramas();
                       })
                       imagens[7].addEventListener('click',()=>{
                         LimparPontos();
                         Mesas();
+                        fecharAbaPanoramas();
                       })
                       imagens[8].addEventListener('click',()=>{
                         LimparPontos();
                         Pendentes();
+                        fecharAbaPanoramas();
                       })
                       
                       
@@ -180,9 +194,12 @@
                   //sai do menu quando clicar em qualquer area fora da div menu 
                   cena.addEventListener('click',()=>{
                     let resultado = window.getComputedStyle(menuConfig)
+                    let result = window.getComputedStyle(divCenas);
                     if(resultado.display === 'block')
                       menuConfig.style.display = 'none';  
-                    });
+                    if(result.display === 'flex')
+                      divCenas.style.display = 'none';  
+                  });
                   
 
                   function ativarAnimacao(){
