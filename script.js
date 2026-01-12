@@ -51,7 +51,7 @@
                   const btnWhatsapp = document.querySelector('#btnWhatsapp');
 
                   //pega a div principal dos panoramas a centralizada em baixo 
-                  const panoramas = document.querySelector('#panoramas');
+                  const panoramas = document.querySelector('#panoramasLabel');
 
                   //pega a div que vai armazenar as cenas 
                   const cenas_showroom = document.querySelector('#cenasShowroom');
@@ -158,11 +158,11 @@
                     
                     if(isPlay == false){
                       animacao.components['animation__rot'].play()
-                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-1x');
+                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-2x');
                     }
                     else{
                       animacao.components['animation__rot'].pause()
-                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-1x');
+                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-2x');
                     }
                   }
 

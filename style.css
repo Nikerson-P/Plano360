@@ -19,6 +19,8 @@ body {
 #containerBtnConfig{
   position: absolute;
   right: 10px;
+  left:10px;
+  top:10px
 }
 
 #cenasShowroom{
@@ -28,13 +30,12 @@ body {
   height: 80vh;
   background-color:antiquewhite;
   overflow-y: auto;
-  
 }
 
-.class{
-  width: auto;
+.divisoria{
+  width: 80%;
   background-color: aquamarine;
-  height: auto;
+  height: 90%;
 
 }
 
