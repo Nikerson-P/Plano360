@@ -55,18 +55,19 @@
 
                   //pega a div que vai armazenar as cenas 
                   const cenas_showroom = document.querySelector('divisorias');
+                  const divCenas = document.querySelector('#cenasShowroom');
                   //pegas todas as classes que vao receber uma imagem dinamicamente 
                   const imagens_cenas = document.querySelectorAll('.imagens_cenas');
                   //pegas todas as referencia de imagens do assets
-                  const assets_refletores = document.querySelector('refletores');
-                  const assets_arandelas1 = document.querySelector('arandela1');
-                  const assets_arandelas2 = document.querySelector('arandela2');
-                  const assets_awei_mesa = document.querySelector('awei-mesa');
-                  const assets_fitas = document.querySelector('fitas');
-                  const assets_balizadores = document.querySelector('balizadores');
-                  const assets_centro_showroom = document.querySelector('centro_showroom');
-                  const assets_pendentes = document.querySelector('pendentes');
-                  const assets_mesas = document.querySelector('mesas');
+                  const assets_refletores = document.querySelector('#refletores');
+                  const assets_arandelas1 = document.querySelector('#arandela1');
+                  const assets_arandelas2 = document.querySelector('#arandela2');
+                  const assets_awei_mesa = document.querySelector('#awei-mesa');
+                  const assets_fitas = document.querySelector('#fitas');
+                  const assets_balizadores = document.querySelector('#balizadores');
+                  const assets_centro_showroom = document.querySelector('#centro_showroom');
+                  const assets_pendentes = document.querySelector('#pendentes');
+                  const assets_mesas = document.querySelector('#mesas');
 
                   const listaRefencia =[
                     assets_arandelas1,
@@ -93,7 +94,7 @@
                     console.log(cenas_showroom);
                     listar_panoramas();
                     
-                    let result = window.getComputedStyle(cenas_showroom);
+                    let result = window.getComputedStyle(divCenas);
                     console.log(result.display);
                         
                     if(result.display === 'none'){
