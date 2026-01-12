@@ -83,7 +83,7 @@
 
                   function listar_panoramas(){
                     console.log("está entrando nas imagens");
-                    console.log(assets_arandelas1.src);
+                    console.log(listaRefencia.assets_arandelas1);
                     console.log(cenas_showroom);
                   }
 
