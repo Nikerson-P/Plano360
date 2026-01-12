@@ -40,7 +40,6 @@ body {
 
 #cenasShowroom > div{
   flex-shrink: 0 0 auto;
-  justify-content: center;
 }
 
 .divisoria{
@@ -52,6 +51,11 @@ body {
   margin-left: 5px;
   margin-top: 5px;
   margin-bottom: 5px;
+}
+.divisoria > img{
+  width: auto;
+  height: auto;
+
 }
 
 #panoramas{
