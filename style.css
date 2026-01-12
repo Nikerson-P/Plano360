@@ -24,7 +24,7 @@ body {
 #btnHome{
   position: absolute;
   left:10px;
-  height: 10px;
+  top: 10px;
 }
 
 #cenasShowroom{
@@ -38,6 +38,8 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
+  padding:5px;
 }
 
 #cenasShowroom > div{
