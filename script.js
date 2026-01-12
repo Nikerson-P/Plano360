@@ -68,14 +68,28 @@
                   const assets_pendentes = document.querySelector('#pendentes');
                   const assets_mesas = document.querySelector('#mesas');
 
-                  
+                  const referencia = [
+                    assets_arandelas1,
+                    assets_arandelas2
+                  ]
+
+
+                  console.log(referencia.assets_arandelas1);
+                  console.log(referencia.assets_arandelas2);
+
 
                   function listar_panoramas(){
                       const imagens = divCenas.querySelectorAll('img');
                       console.log(imagens.length);
-                      //for(let i = 0 ; i <= imagens.length;i++){
-                        
-                     // }
+                      imagens[0].setAttribute('src',assets_refletores.src);
+                      imagens[1].setAttribute('src',assets_arandelas1.src);
+                      imagens[2].setAttribute('src',assets_arandelas2.src);
+                      imagens[3].setAttribute('src',assets_awei_mesa.src);
+                      imagens[4].setAttribute('src',assets_balizadores.src);
+                      imagens[5].setAttribute('src',assets_fitas.src);
+                      imagens[6].setAttribute('src',assets_centro_showroom.src);
+                      imagens[7].setAttribute('src',assets_mesas.src);
+                      imagens[8].setAttribute('src',assets_pendentes.src);
 
                   }
 
