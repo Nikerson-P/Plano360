@@ -40,6 +40,7 @@ body {
 
 #cenasShowroom > div{
   flex-shrink: 0 0 auto;
+  align-items: center;
 }
 
 .divisoria{
