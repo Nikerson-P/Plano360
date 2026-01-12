@@ -45,7 +45,7 @@
 
                   //botoes do menu config
                   const btnAtivarAnimacao =    document.querySelector('#btnAtivarAnimacao'); 
-                  const btnFullScreen = document.querySelector('#btnFullScreen');
+                  
                   const btnFacebook = document.querySelector('#btnFacebook');
                   const btnInstagram = document.querySelector('#btnInstagram');
                   const btnWhatsapp = document.querySelector('#btnWhatsapp');
@@ -81,6 +81,7 @@
                   ];
 
                   function listar_panoramas(){
+                    console.log("está entrando nas imagens");
                       imagens_cenas.forEach((el, index) => {
                         // aplica a referência correspondente
                         console.log('percorreu todas as posições');
@@ -91,6 +92,7 @@
 
                   panoramas.addEventListener('click',()=>{
                     console.log("entrou na funcao");
+                    console.log(cenas_showroom);
                     listar_panoramas();
                     
                     let result = window.getComputedStyle(cenas_showroom);
