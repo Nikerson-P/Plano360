@@ -70,15 +70,15 @@
                   const assets_mesas = document.querySelector('#mesas');
 
                   const listaRefencia =[
-                    assets_arandelas1,
-                    assets_arandelas2,
-                    assets_awei_mesa,
-                    assets_balizadores,
-                    assets_centro_showroom,
-                    assets_fitas,
-                    assets_mesas,
-                    assets_pendentes,
-                    assets_refletores
+                    assets_arandelas1.src,
+                    assets_arandelas2.src,
+                    assets_awei_mesa.src,
+                    assets_balizadores.src,
+                    assets_centro_showroom.src,
+                    assets_fitas.src,
+                    assets_mesas.src,
+                    assets_pendentes.src,
+                    assets_refletores.src
                   ];
 
                   function listar_panoramas(){
@@ -91,7 +91,7 @@
 
                   panoramas.addEventListener('click',()=>{
                     console.log("entrou na funcao");
-                    console.log(cenas_showroom);
+                    console.log(cenas_showroom.src);
                     listar_panoramas();
                     
                     let result = window.getComputedStyle(divCenas);
