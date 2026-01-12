@@ -47,7 +47,7 @@ body {
   position: absolute;
   z-index: 10010;
   width: 80%;
-  height: 80vh;
+  height: 70vh;
   background-color: whitesmoke;
   overflow-y: auto;
   flex-wrap: wrap;
