@@ -58,12 +58,12 @@ body {
   background-color: darkgray;
 }
 #cenasShowroom > div > div{
-  flex-shrink: 0 0 auto;
+  flex-shrink: 0;
 
 }
 #cenasShowroom > div > section{
   width: 100%;
-  flex-shrink: 0 0 auto;
+  flex-shrink: 0;
 
 }
 
