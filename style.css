@@ -42,8 +42,12 @@ body {
 
 #cenasShowroom > div{
   flex-shrink: 0 0 auto;
- 
-  
+}
+#cenasShowroom > section{
+  width: 100%;
+  background-color: aqua;
+  flex-shrink: 0 0 auto;
+
 }
 
 .divisoria{
