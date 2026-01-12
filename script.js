@@ -71,10 +71,7 @@
                   
 
                   function listar_panoramas(){
-
-                    divCenas.forEach(element => {
-                        console.log(element);
-                    });
+                      
                   }
 
                   //abre a div que está com os panoramas

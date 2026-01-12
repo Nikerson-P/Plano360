@@ -38,7 +38,9 @@ body {
   flex-wrap: wrap;
 }
 
-
+#cenasShowroom > div{
+  flex-shrink: 0 0 auto;
+}
 
 .divisoria{
   width: 45%;
