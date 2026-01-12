@@ -46,6 +46,7 @@ body {
   z-index: 10010;
   width: 80%;
   height: 80vh;
+  background-color: moccasin;
   overflow-y: auto;
   flex-wrap: wrap;
   justify-content: center;
@@ -54,10 +55,10 @@ body {
   padding:5px;
 }
 
-#cenasShowroom > div{
+#cenasShowroom > div > div{
   flex-shrink: 0 0 auto;
 }
-#cenasShowroom > section{
+#cenasShowroom > div > section{
   width: 100%;
   flex-shrink: 0 0 auto;
 
