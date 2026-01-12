@@ -67,7 +67,7 @@
                   const assets_centro_showroom = document.querySelector('#centro_showroom');
                   const assets_pendentes = document.querySelector('#pendentes');
                   const assets_mesas = document.querySelector('#mesas');
-
+                  const imagens = divCenas.querySelectorAll('img');
                   const referencia = [
                     assets_arandelas1,
                     assets_arandelas2
@@ -76,10 +76,10 @@
 
                   console.log(referencia.assets_arandelas1);
                   console.log(referencia.assets_arandelas2);
-                  
+
                   //#region Panoramas
                   function listar_panoramas(){
-                      const imagens = divCenas.querySelectorAll('img');
+                      
 
                       imagens[0].setAttribute('src',assets_refletores.src);
                       imagens[1].setAttribute('src',assets_arandelas1.src);
