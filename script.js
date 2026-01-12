@@ -95,7 +95,7 @@
                     
                     let result = window.getComputedStyle(cenas_showroom);
                     console.log(result.display);
-
+                        
                     if(result.display === 'none'){
                       cenas_showroom.style.display = 'block';
                     }else{
