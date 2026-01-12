@@ -69,22 +69,12 @@
                   const assets_pendentes = document.querySelector('#pendentes');
                   const assets_mesas = document.querySelector('#mesas');
 
-                  const listaRefencia =[
-                    assets_arandelas1.src,
-                    assets_arandelas2.src,
-                    assets_awei_mesa.src,
-                    assets_balizadores.src,
-                    assets_centro_showroom.src,
-                    assets_fitas.src,
-                    assets_mesas.src,
-                    assets_pendentes.src,
-                    assets_refletores.src
-                  ];
+                  
 
                   function listar_panoramas(){
                     console.log("está entrando nas imagens");
-                    console.log(listaRefencia.assets_arandelas1);
-                    console.log(cenas_showroom);
+                    console.log(assets_arandelas1);
+                    console.log(divCenas);
                   }
 
                   //abre a div que está com os panoramas
