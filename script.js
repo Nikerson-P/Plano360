@@ -9,13 +9,13 @@
 
                   //adiciona o evento de inicialização
                   cena.addEventListener('componentinitialized',() =>{
-                    console.log('Entrou na inicialização');
+                    //console.log('Entrou na inicialização');
                     cenaPrincipal.style.display = 'none';
 
                   })
                   //adiconar o evento de termino de inicialização 
                   cena.addEventListener('loaded',()=>{
-                    console.log('terminou a inicialização');
+                    //console.log('terminou a inicialização');
                     cenaPrincipal.style.display = 'block';
                     loading.style.display = 'none'
                   }) 
@@ -68,11 +68,7 @@
                   const assets_pendentes = document.querySelector('#pendentes');
                   const assets_mesas = document.querySelector('#mesas');
                   const imagens = divCenas.querySelectorAll('img');
-                  const referencia = [
-                    assets_arandelas1,
-                    assets_arandelas2
-                  ]
-
+        
 
 
                   //#region Panoramas
