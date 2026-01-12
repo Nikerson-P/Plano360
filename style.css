@@ -53,8 +53,8 @@ body {
   margin-bottom: 5px;
 }
 .divisoria > img{
-  width: auto;
-  height: auto;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 
