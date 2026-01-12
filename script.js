@@ -71,7 +71,12 @@
                   
 
                   function listar_panoramas(){
-                      
+                      const imagens = divCenas.querySelectorAll('img');
+
+                      for(let i = 0 ; i <= imagens.length;i++){
+                        console.log(imagens);
+                      }
+
                   }
 
                   //abre a div que está com os panoramas
