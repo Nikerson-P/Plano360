@@ -44,7 +44,6 @@ body {
 
 .divisoria{
   width: 45%;
-  height:25%;
   float:left;
   background-color: rgb(140, 127, 255);
   padding: 2px;
@@ -53,8 +52,7 @@ body {
   margin-bottom: 5px;
 }
 .divisoria > img{
-  width: 100px;
-  height: 100px;
+  width: 100%;
   object-fit: cover;
 }
 
