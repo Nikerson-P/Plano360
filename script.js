@@ -82,11 +82,9 @@
 
                   function listar_panoramas(){
                     console.log("está entrando nas imagens");
+                    console.log(assets_arandelas1);
                       imagens_cenas.forEach((el, index) => {
-                        // aplica a referência correspondente
-                        console.log('percorreu todas as posições');
                         el.setAttribute('src', listaRefencia[index]);
-                        console.log(el);
                       });
                   }
 
