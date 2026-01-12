@@ -56,12 +56,16 @@ body {
 }
 #panoramaFundo{
   background-color: darkgray;
-  align-items: center;
-  justify-content: center;
+  
+}
+
+#cenasShowroom >div {
+  width: 100%;
 }
 #cenasShowroom > div > div{
   flex-shrink: 0 ;
-
+  align-items: center;
+  justify-content: center;
 }
 #cenasShowroom > div > section{
   width: 100%;
