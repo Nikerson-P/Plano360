@@ -18,7 +18,8 @@ body {
 }
 #containerBtnConfig{
   position: absolute;
-
+  right: 10px;
+  top:10px
 }
 
 #cenasShowroom{
@@ -90,7 +91,7 @@ body {
 #menu-container {
   position: absolute;
   z-index: 1000;
-  width: 100%;
+  width: 90%;
   font-family: Arial, sans-serif;
   display:flex;
   justify-content: space-between;
