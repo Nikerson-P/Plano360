@@ -55,7 +55,7 @@ body {
 .divisoria > img{
   width: auto;
   height: auto;
-
+  object-fit: cover;
 }
 
 #panoramas{
