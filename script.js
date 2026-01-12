@@ -77,7 +77,7 @@
                   console.log(referencia.assets_arandelas1);
                   console.log(referencia.assets_arandelas2);
 
-
+                  //#region Panoramas
                   function listar_panoramas(){
                       const imagens = divCenas.querySelectorAll('img');
                       console.log(imagens.length);
@@ -91,8 +91,47 @@
                       imagens[7].setAttribute('src',assets_mesas.src);
                       imagens[8].setAttribute('src',assets_pendentes.src);
 
+                      imagens[0].addEventListener('click',()={
+                        LimparPontos();
+                        refletores();
+                      })
+                      imagens[1].addEventListener('click',()={ 
+                        LimparPontos();
+                        arandelaDecor1();
+                      })
+                      imagens[2].addEventListener('click',()={
+                        LimparPontos();
+                        arandelaDecor2();
+                      })
+                      imagens[3].addEventListener('click',()={
+                        LimparPontos();
+                        MesaAwei();
+                      })
+                      imagens[4].addEventListener('click',()={
+                        LimparPontos();
+                        balizadores();
+                      })
+                      imagens[5].addEventListener('click',()={
+                        LimparPontos();
+                        Fitas();
+                      })
+                      imagens[6].addEventListener('click',()={
+                        LimparPontos();
+                        Centro();
+                      })
+                      imagens[7].addEventListener('click',()={
+                        LimparPontos();
+                        Mesas();
+                      })
+                      imagens[8].addEventListener('click',()={
+                        LimparPontos();
+                        Pendentes();
+                      })
+                      
+                      
                   }
-
+                  //#endregion
+                  //#region Controle menu
                   //abre a div que está com os panoramas
                   panoramas.addEventListener('click',()=>{
                     
@@ -107,30 +146,24 @@
                       divCenas.style.display = 'none';
                     }
                   })
-                  
-
                   //abre uma nova guia do facebook Galaxy 
                   btnFacebook.addEventListener('click',()=>{
                       window.open('https://www.facebook.com/galaxyledbr/', '_blank');
 
                   })
-
                   //abare uma nova guia com a pagina do instagram
                   btnInstagram.addEventListener('click',()=>{
                       window.open('https://www.instagram.com/galaxyledbr/', '_blank');
 
                   })
-
                   //abre uma nova guia com um layout pronto da guia para conversar com no whatsapp da galaxy
                   btnWhatsapp.addEventListener('click',()=>{
                         window.open('https://wa.me/5511991526976?text=Ol%C3%A1!%20%F0%9F%91%8B%0A%0AEu%20vim%20do%20tour%20virtual%20e%20tenho%20interesse%20em%20ver%20mais%20dos%20seus%20produtos.%20Poderia%20me%20enviar%20mais%20informa%C3%A7%C3%B5es,%20por%20favor%3F%20%F0%9F%98%8A', '_blank')
                   }); 
-
                   //adiciona funcoes aos botoes do menu de configurações
                   btnAtivarAnimacao.addEventListener('click',()=>{
                     ativarAnimacao();
                   })
-
                   //abre e fecha o menu
                   btnConfig.addEventListener('click',() =>{
       
@@ -142,12 +175,10 @@
                       menuConfig.style.display = 'none';  
                     }
                   });
-                  
                   // coloca a funcão de voltar ao inicio, centro do showroom
                   btnHome.addEventListener('click',()=>{
                       Centro();
                   });
-                  
                   //sai do menu quando clicar em qualquer area fora da div menu 
                   cena.addEventListener('click',()=>{
                     let resultado = window.getComputedStyle(menuConfig)
@@ -173,7 +204,6 @@
                       iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-2x');
                     }
                   }
-
                   function LimparPontos(){
                               btnBalizadores.setAttribute('visible',false);
                               btnArandelaDecor1.setAttribute('visible',false);
@@ -195,7 +225,7 @@
                               btnPendentes.classList.remove('hotspot');
                               btnRefletores.classList.remove('hotspot');
                   }
-
+                  //#endregion
                   //#region Posições e rotações
                   //posições  que ficam na Imagem Centro Showroom 
                   const posicoesCentroShowroom = {
