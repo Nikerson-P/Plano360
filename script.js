@@ -76,11 +76,11 @@
 
                   console.log(referencia.assets_arandelas1);
                   console.log(referencia.assets_arandelas2);
-
+                  
                   //#region Panoramas
                   function listar_panoramas(){
                       const imagens = divCenas.querySelectorAll('img');
-                      
+
                       imagens[0].setAttribute('src',assets_refletores.src);
                       imagens[1].setAttribute('src',assets_arandelas1.src);
                       imagens[2].setAttribute('src',assets_arandelas2.src);
