@@ -80,7 +80,7 @@
                   //#region Panoramas
                   function listar_panoramas(){
                       const imagens = divCenas.querySelectorAll('img');
-                      console.log(imagens.length);
+                      
                       imagens[0].setAttribute('src',assets_refletores.src);
                       imagens[1].setAttribute('src',assets_arandelas1.src);
                       imagens[2].setAttribute('src',assets_arandelas2.src);
