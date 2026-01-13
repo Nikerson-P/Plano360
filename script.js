@@ -55,8 +55,6 @@
 
                   //pega a div que vai armazenar as cenas 
                   const divCenas = document.querySelector('#cenasShowroom');
-                  //pegas todas as classes que vao receber uma imagem dinamicamente 
-                  const imagens_cenas = document.querySelectorAll('.imagens_cenas');
                   //pegas todas as referencia de imagens do assets
                   const assets_refletores = document.querySelector('#refletores');
                   const assets_arandelas1 = document.querySelector('#arandela1');
@@ -208,11 +206,11 @@
                     
                     if(isPlay == false){
                       animacao.components['animation__rot'].play()
-                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-2x');
+                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-2x');
                     }
                     else{
                       animacao.components['animation__rot'].pause()
-                      iconeAtivarAnimacao.setAttribute('class','fa-regular fa-eye fa-2x');
+                      iconeAtivarAnimacao.setAttribute('class','fa-solid fa-eye fa-2x');
                     }
                   }
                   function LimparPontos(){
