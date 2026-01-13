@@ -56,7 +56,6 @@ body {
   padding:5px;
 }
 .panoramaFundo{
-  background-color: #11111140;
   width: 100%;
   display:flex;
   flex-wrap: wrap;
@@ -65,7 +64,6 @@ body {
 }
 .panoramaTitulo{
   width: 100%;
-  background-color: #00000017;
   text-decoration: overline;
   padding: 5px;
 }
