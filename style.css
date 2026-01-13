@@ -49,14 +49,14 @@ body {
   z-index: 10010;
   width: 80%;
   height: 70vh;
-  background-color: red;
+  background-color: whitesmoke;
   overflow-y: auto;
   flex-wrap: wrap;
   border-radius: 5px;
   padding:5px;
 }
 .panoramaFundo{
-  background-color: black;
+  background-color: #11111140;
   width: 100%;
   display:flex;
   flex-wrap: wrap;
@@ -65,7 +65,7 @@ body {
 }
 .panoramaTitulo{
   width: 100%;
-  background-color: blue;
+  background-color: #00000017;
   text-decoration: overline;
   padding: 5px;
 }
