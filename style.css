@@ -51,7 +51,7 @@ body {
   height: 70vh;
   background-color: red;
   overflow-y: auto;
-  flex-wrap: wrap;
+  
   border-radius: 5px;
   padding:5px;
 }
@@ -63,12 +63,12 @@ body {
   justify-content: center;
   align-items: center;
 }
-#panoramaTitulo{
+.panoramaTitulo{
   width: 100%;
   background-color: blue;
   
 }
-#panoramaTitulo > label{
+.panoramaTitulo > label{
   text-decoration: overline;
   padding-left: 5%;
 }
