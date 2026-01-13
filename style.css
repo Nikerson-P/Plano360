@@ -71,19 +71,12 @@ body {
   text-decoration: overline;
   padding-left: 5%;
 }
-#cenasShowroom >div {
-  width: 100%;
-  
-  align-items: center;
-}
+
 #cenasShowroom > div > div{
   flex-shrink: 0 ;
 
 }
-#cenasShowroom > div > section{
-  width: 100%;
-  flex-shrink: 0 0 auto;
-}
+
 
 .divisoria{
   width: 45%;
