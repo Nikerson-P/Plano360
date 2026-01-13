@@ -43,12 +43,12 @@ body {
 }
 
 #cenasShowroom{
+  display:flex;
   display:none;
   position: absolute;
   z-index: 10010;
   width: 80%;
   height: 70vh;
-  display:flex;
   background-color: whitesmoke;
   overflow-y: auto;
   flex-wrap: wrap;
