@@ -66,11 +66,8 @@ body {
 .panoramaTitulo{
   width: 100%;
   background-color: blue;
-  
-}
-.panoramaTitulo > label{
   text-decoration: overline;
-  padding-left: 5%;
+  padding: 5px;
 }
 
 
