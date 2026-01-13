@@ -51,11 +51,11 @@ body {
   height: 70vh;
   background-color: red;
   overflow-y: auto;
-  
+  flex-wrap: wrap;
   border-radius: 5px;
   padding:5px;
 }
-#panoramaFundo{
+.panoramaFundo{
   background-color: black;
   width: 100%;
   display:flex;
