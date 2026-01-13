@@ -43,9 +43,9 @@ body {
 }
 
 #cenasShowroom{
-  display:flex;
+  
   display:none;
-  position: absolute;
+  position: fixed;
   z-index: 10010;
   width: 80%;
   height: 70vh;
