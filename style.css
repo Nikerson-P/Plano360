@@ -65,14 +65,13 @@ body {
 }
 #panoramaTitulo{
   width: 100%;
-  
 }
-#panoramaTitulo label{
+#panoramaTitulo > label{
   text-decoration: overline;
   padding-left: 5%;
 }
 
-#cenasShowroom > div > div{
+#cenasShowroom > div{
   flex-shrink: 0 ;
 
 }
